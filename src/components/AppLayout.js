@@ -1,32 +1,40 @@
 import {useContext} from "react";
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import {AppBar, Box, Button, CssBaseline, Drawer, Toolbar, Typography} from "@mui/material";
+
 import {AppContext} from "../App";
-import {AppBar, Box, CssBaseline, Drawer, Toolbar, Typography} from "@mui/material";
 import NavigationList from "./NavigationList";
 
-const AppSidebar = () => {
+
+const AppLayout = () => {
     let appContext = useContext(AppContext)
-    let darkTheme = appContext.darkTheme
-    let lightTheme = appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
     return (
         <Box sx={{display: 'flex'}}>
             <CssBaseline/>
             <AppBar position='fixed' sx={{
-                backgroundColor: lightTheme.primary,
+                backgroundColor: appTheme.primary,
                 height: '8vh',
                 zIndex: (theme) => theme.zIndex.drawer + 1
             }}>
                 <Toolbar>
-                    <Typography color={lightTheme.tertiary} fontSize='24px' fontWeight='bold'>
+                    <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
                         Main Menu
                     </Typography>
                 </Toolbar>
+                <Button
+                    endIcon={<DarkModeOutlinedIcon/>}
+                    onClick={() => {
+                        appContext.setIsDarkThemeActive(!appContext.isDarkThemeActive)
+                    }}
+                />
             </AppBar>
             <Drawer anchor='left' variant='permanent' sx={{
                 [`& .MuiDrawer-paper`]: {
-                    backgroundColor: lightTheme.secondary,
+                    backgroundColor: appTheme.primary,
                     borderRight: 'solid',
-                    borderRightColor: lightTheme.tertiary,
+                    borderRightColor: appTheme.tertiary,
                     boxSizing: 'border-box',
                     width: '15vw'
                 }
@@ -50,4 +58,4 @@ const AppSidebar = () => {
     )
 }
 
-export default AppSidebar
+export default AppLayout

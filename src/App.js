@@ -1,25 +1,32 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import {createContext} from "react";
+import {createContext, useState} from "react";
 import Home from "./pages/Home";
 
-let defaultContext = {
-    darkTheme: {
-        primary: '#253D5B', // Prussian Blue
-        secondary: '#DD7373', // Light Coral
-        tertiary: '#EEF8FF', // Alice Blue
-    },
-    lightTheme: {
-        primary: '#EEF8FF', // Alice Blue
-        secondary: '#3C91E6', // Tufts Blue
-        tertiary: '#253D5B', // Prussian Blue
-    }
-}
-
-export const AppContext = createContext(defaultContext)
+export const AppContext = createContext({
+    isDarkThemeActive: false,
+    setIsDarkThemeActive: (newState) => {},
+    darkTheme: {},
+    lightTheme: {}
+})
 
 const App = () => {
+    const [isDarkThemeActive, setIsDarkThemeActive] = useState(false)
+
     return (
-        <AppContext.Provider value={defaultContext}>
+        <AppContext.Provider value={{
+            isDarkThemeActive: isDarkThemeActive,
+            setIsDarkThemeActive: setIsDarkThemeActive,
+            darkTheme: {
+                primary: '#253D5B', // Prussian Blue
+                secondary: '#EEF8FF', // Alice Blue
+                tertiary: '#3E92CC', // Celestial Blue
+            },
+            lightTheme: {
+                primary: '#EEF8FF', // Alice Blue
+                secondary: '#253D5B', // Prussian Blue
+                tertiary: '#3E92CC', // Celestial Blue
+            }
+        }}>
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<Navigate to={"/home"}/>}/>

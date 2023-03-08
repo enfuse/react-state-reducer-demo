@@ -1,16 +1,15 @@
 import {useContext} from "react";
 import {AppContext} from "../App";
-import AppSidebar from "../components/AppSidebar";
+import AppLayout from "../components/AppLayout";
 import {Paper} from "@mui/material";
 
 const Home = () => {
     let appContext = useContext(AppContext)
-    let darkTheme = appContext.darkTheme
-    let lightTheme = appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
     return (
         <>
-            <AppSidebar/>
+            <AppLayout/>
             <Paper>
                 <div>
                     Home

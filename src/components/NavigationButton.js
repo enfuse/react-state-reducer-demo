@@ -4,29 +4,28 @@ import {ListItemButton, ListItemText} from "@mui/material";
 
 const NavigationButton = ({buttonTitle, onClick}) => {
     let appContext = useContext(AppContext)
-    let darkTheme = appContext.darkTheme
-    let lightTheme = appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
     return (
         <ListItemButton
-            color={lightTheme.secondary}
+            color={appTheme.secondary}
             onClick={onClick}
             sx={{
-                backgroundColor: lightTheme.secondary,
+                backgroundColor: appTheme.secondary,
                 border: 'solid',
-                borderColor: lightTheme.secondary,
+                borderColor: appTheme.secondary,
                 '&:hover': {
-                    backgroundColor: lightTheme.tertiary,
-                    color: lightTheme.tertiary
+                    backgroundColor: appTheme.tertiary,
+                    color: appTheme.tertiary
                 }
             }}
         >
             <ListItemText
-                color={lightTheme.primary}
+                color={appTheme.primary}
                 primary={buttonTitle}
                 primaryTypographyProps={{
                     align: 'center',
-                    color: lightTheme.primary,
+                    color: appTheme.primary,
                     fontSize: 20,
                     fontWeight: 'bolder'
                 }}
