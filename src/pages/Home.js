@@ -10,7 +10,11 @@ const Home = () => {
     return (
         <>
             <AppLayout/>
-            <Paper>
+            <Paper style={{
+                backgroundColor: appTheme.primary,
+                outlineColor: appTheme.secondary,
+                outlineWidth: '1px'
+            }}>
                 <div>
                     Home
                 </div>
