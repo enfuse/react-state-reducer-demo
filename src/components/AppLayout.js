@@ -1,5 +1,6 @@
 import {useContext} from "react";
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import {AppBar, Box, Button, Drawer, Paper, Toolbar, Typography} from "@mui/material";
 
 import {AppContext} from "../App";
@@ -49,7 +50,7 @@ const AppLayout = ({children}) => {
                             </Typography>
                         </Toolbar>
                         <Button
-                            endIcon={<DarkModeOutlinedIcon/>}
+                            endIcon={appContext.isDarkThemeActive ? <LightModeOutlinedIcon/> : <DarkModeOutlinedIcon/>}
                             onClick={() => {
                                 appContext.setIsDarkThemeActive(!appContext.isDarkThemeActive)
                             }}

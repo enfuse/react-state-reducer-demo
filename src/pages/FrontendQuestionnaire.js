@@ -3,6 +3,7 @@ import {frontendStateReducer} from "./FrontendQuestionnaireState";
 import AppLayout from "../components/AppLayout";
 import {Card, Typography} from "@mui/material";
 import {AppContext} from "../App";
+import AppCard from "../components/AppCard";
 
 const FrontendQuestionnaire = () => {
     let appContext = useContext(AppContext)
@@ -12,18 +13,7 @@ const FrontendQuestionnaire = () => {
     return (
         <>
             <AppLayout>
-                <Card elevation={1} sx={{
-                    alignItems: 'center',
-                    backgroundColor: appTheme.tertiary,
-                    color: appTheme.tertiary,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                    justifyContent: 'flex-start',
-                    outlineColor: appTheme.secondary,
-                    outlineWidth: '1px',
-                    width: '100%'
-                }}>
+                <AppCard>
                     <div style={{
                         display: 'flex',
                         height: '10%',
@@ -34,8 +24,7 @@ const FrontendQuestionnaire = () => {
                             Frontend
                         </Typography>
                     </div>
-                </Card>
-
+                </AppCard>
             </AppLayout>
         </>
     )

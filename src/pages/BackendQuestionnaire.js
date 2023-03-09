@@ -2,6 +2,7 @@ import AppLayout from "../components/AppLayout";
 import {Card, Typography} from "@mui/material";
 import {useContext} from "react";
 import {AppContext} from "../App";
+import AppCard from "../components/AppCard";
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)
@@ -10,18 +11,7 @@ const BackendQuestionnaire = () => {
     return (
         <>
             <AppLayout>
-                <Card elevation={1} sx={{
-                    alignItems: 'center',
-                    backgroundColor: appTheme.tertiary,
-                    color: appTheme.tertiary,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                    justifyContent: 'flex-start',
-                    outlineColor: appTheme.secondary,
-                    outlineWidth: '1px',
-                    width: '100%'
-                }}>
+                <AppCard>
                     <div style={{
                         display: 'flex',
                         height: '10%',
@@ -32,7 +22,7 @@ const BackendQuestionnaire = () => {
                             Backend
                         </Typography>
                     </div>
-                </Card>
+                </AppCard>
             </AppLayout>
         </>
     )

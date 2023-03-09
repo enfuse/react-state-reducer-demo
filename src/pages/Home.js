@@ -2,6 +2,7 @@ import {useContext} from "react";
 import {Card, Typography} from "@mui/material";
 import {AppContext} from "../App";
 import AppLayout from "../components/AppLayout";
+import AppCard from "../components/AppCard";
 
 const Home = () => {
     let appContext = useContext(AppContext)
@@ -10,18 +11,7 @@ const Home = () => {
     return (
         <>
             <AppLayout>
-                <Card elevation={1} sx={{
-                    alignItems: 'center',
-                    backgroundColor: appTheme.tertiary,
-                    color: appTheme.tertiary,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                    justifyContent: 'flex-start',
-                    outlineColor: appTheme.secondary,
-                    outlineWidth: '1px',
-                    width: '100%'
-                }}>
+                <AppCard>
                     <div style={{
                         display: 'flex',
                         height: '10%',
@@ -32,7 +22,7 @@ const Home = () => {
                             Home
                         </Typography>
                     </div>
-                </Card>
+                </AppCard>
             </AppLayout>
         </>
     )
