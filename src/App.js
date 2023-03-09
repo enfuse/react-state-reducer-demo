@@ -1,10 +1,12 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {createContext, useState} from "react";
+import BackendQuestionnaire from "./pages/BackendQuestionnaire";
+import FrontendQuestionnaire from "./pages/FrontendQuestionnaire";
 import Home from "./pages/Home";
 
 export const AppContext = createContext({
     isDarkThemeActive: false,
-    setIsDarkThemeActive: (newState) => {},
+    setIsDarkThemeActive: ({}) => {},
     darkTheme: {},
     lightTheme: {}
 })
@@ -30,6 +32,8 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<Navigate to={"/home"}/>}/>
+                    <Route path={"/backend"} element={<BackendQuestionnaire/>}/>
+                    <Route path={"/frontend"} element={<FrontendQuestionnaire/>}/>
                     <Route path={"/home"} element={<Home/>}/>
                 </Routes>
             </BrowserRouter>

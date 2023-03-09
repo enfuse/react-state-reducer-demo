@@ -1,7 +1,7 @@
 import {useContext} from "react";
+import {Card, Typography} from "@mui/material";
 import {AppContext} from "../App";
 import AppLayout from "../components/AppLayout";
-import {Paper} from "@mui/material";
 
 const Home = () => {
     let appContext = useContext(AppContext)
@@ -9,16 +9,27 @@ const Home = () => {
 
     return (
         <>
-            <AppLayout/>
-            <Paper style={{
-                backgroundColor: appTheme.primary,
-                outlineColor: appTheme.secondary,
-                outlineWidth: '1px'
-            }}>
-                <div>
-                    Home
-                </div>
-            </Paper>
+            <AppLayout>
+                <Card elevation={1} sx={{
+                    backgroundColor: appTheme.tertiary,
+                    color: appTheme.tertiary,
+                    height: '100%',
+                    outlineColor: appTheme.secondary,
+                    outlineWidth: '1px',
+                    width: '100%'
+                }}>
+                    <div style={{
+                        display: 'flex',
+                        height: '20%',
+                        justifyContent: 'center',
+                        width: '50%'
+                    }}>
+                        <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
+                            Home
+                        </Typography>
+                    </div>
+                </Card>
+            </AppLayout>
         </>
     )
 }

@@ -15,6 +15,22 @@ const NavigationList = () => {
                     }}
                 />
             </ListItem>
+            <ListItem>
+                <NavigationButton
+                    buttonTitle='Backend'
+                    onClick={() => {
+                        navigate('/backend')
+                    }}
+                />
+            </ListItem>
+            <ListItem>
+                <NavigationButton
+                    buttonTitle='Frontend'
+                    onClick={() => {
+                        navigate('/frontend')
+                    }}
+                />
+            </ListItem>
         </List>
     )
 }

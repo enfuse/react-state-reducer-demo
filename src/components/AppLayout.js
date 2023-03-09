@@ -1,62 +1,103 @@
 import {useContext} from "react";
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import {AppBar, Box, Button, CssBaseline, Drawer, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Button, Drawer, Paper, Toolbar, Typography} from "@mui/material";
 
 import {AppContext} from "../App";
 import NavigationList from "./NavigationList";
 
-const AppLayout = () => {
+const AppLayout = ({children}) => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
     return (
-        <Box sx={{display: 'flex'}}>
-            <CssBaseline/>
-            <AppBar position='fixed' sx={{
-                backgroundColor: appTheme.primary,
-                height: '8vh',
-                zIndex: (theme) => theme.zIndex.drawer + 1
-            }}>
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <Toolbar>
-                        <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
-                            Main Menu
-                        </Typography>
-                    </Toolbar>
-                    <Button
-                        endIcon={<DarkModeOutlinedIcon/>}
-                        onClick={() => {
-                            appContext.setIsDarkThemeActive(!appContext.isDarkThemeActive)
-                        }}
-                        variant='outlined'
-                    >{appContext.isDarkThemeActive ? 'Light Mode' : 'Dark Mode'}</Button>
-                </div>
-            </AppBar>
-            <Drawer anchor='left' variant='permanent' sx={{
-                [`& .MuiDrawer-paper`]: {
+        <>
+            <Box sx={{display: 'flex', height: '100vh', width: '100vw'}}>
+                <Paper sx={{
+                    alignItems: 'center',
                     backgroundColor: appTheme.primary,
-                    borderRight: 'solid',
-                    borderRightColor: appTheme.tertiary,
-                    boxSizing: 'border-box',
-                    width: '15vw'
-                }
-            }}>
-                <Toolbar/>
-                <Box sx={{
-                    alignItems: 'left',
+                    bottom: '0px',
+                    color: appTheme.primary,
                     display: 'flex',
-                    direction: 'row',
-                    height: '92vh',
-                    justifyItems: 'center',
-                    overflow: 'auto',
-                    position: 'absolute',
-                    top: '7vh',
-                    width: '13vw'
+                    flexDirection: 'row',
+                    height: '90%',
+                    justifyContent: 'center',
+                    position: 'fixed',
+                    right: '0px',
+                    width: '85%'
                 }}>
-                    <NavigationList/>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        height: '90%',
+                        width: '90%'
+                    }}>
+                        {children}
+                    </div>
+                </Paper>
+                <AppBar sx={{
+                    backgroundColor: appTheme.primary,
+                    height: '10%',
+                    minHeight: '50px',
+                    minWidth: '100px',
+                    width: '100%',
+                    zIndex: (theme) => theme.zIndex.drawer + 1
+                }}>
+                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                        <Toolbar>
+                            <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
+                                Toolkit Builder
+                            </Typography>
+                        </Toolbar>
+                        <Button
+                            endIcon={<DarkModeOutlinedIcon/>}
+                            onClick={() => {
+                                appContext.setIsDarkThemeActive(!appContext.isDarkThemeActive)
+                            }}
+                            size='medium'
+                            variant='outlined'
+                        >
+                            {appContext.isDarkThemeActive ? 'Light Mode' : 'Dark Mode'}
+                        </Button>
+                    </div>
+                </AppBar>
+                <Box sx={{
+                    left: '0px',
+                    height: '100%',
+                    minHeight: '150px',
+                    minWidth: '75px',
+                    position: 'fixed',
+                    top: '0px',
+                    width: '15%'
+                }}>
+                    <Box sx={{height: '10%', minHeight: '15px'}}/>
+                    <Drawer
+                        anchor='left'
+                        variant='permanent'
+                        PaperProps={{
+                            style: {
+                                backgroundColor: appTheme.primary,
+                                borderRight: 'solid',
+                                borderRightColor: appTheme.tertiary,
+                                bottom: '0px',
+                                left: '0px',
+                                overflowX: 'unset',
+                                overflowY: 'unset',
+                                position: 'sticky'
+                            }
+                        }}
+                        sx={{
+                            height: '90%',
+                            minHeight: '142px',
+                            minWidth: '75px',
+                            position: 'fixed',
+                            width: '15%'
+                        }}
+                    >
+                        <NavigationList/>
+                    </Drawer>
                 </Box>
-            </Drawer>
-        </Box>
+            </Box>
+        </>
     )
 }
 
