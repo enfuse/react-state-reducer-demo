@@ -3,10 +3,11 @@ import {createContext, useState} from "react";
 import BackendQuestionnaire from "./pages/BackendQuestionnaire";
 import FrontendQuestionnaire from "./pages/FrontendQuestionnaire";
 import Home from "./pages/Home";
+import MobileQuestionnaire from "./pages/MobileQuestionnaire";
 
 export const AppContext = createContext({
     isDarkThemeActive: false,
-    setIsDarkThemeActive: ({}) => {},
+    setIsDarkThemeActive: (newState) => {},
     darkTheme: {},
     lightTheme: {}
 })
@@ -35,6 +36,7 @@ const App = () => {
                     <Route path={"/backend"} element={<BackendQuestionnaire/>}/>
                     <Route path={"/frontend"} element={<FrontendQuestionnaire/>}/>
                     <Route path={"/home"} element={<Home/>}/>
+                    <Route path={"/mobile"} element={<MobileQuestionnaire/>}/>
                 </Routes>
             </BrowserRouter>
         </AppContext.Provider>

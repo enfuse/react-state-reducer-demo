@@ -12,7 +12,7 @@ const AppLayout = ({children}) => {
     return (
         <>
             <Box sx={{display: 'flex', height: '100vh', width: '100vw'}}>
-                <Paper sx={{
+                <Paper variant='outlined' square sx={{
                     alignItems: 'center',
                     backgroundColor: appTheme.primary,
                     bottom: '0px',
@@ -23,7 +23,7 @@ const AppLayout = ({children}) => {
                     justifyContent: 'center',
                     position: 'fixed',
                     right: '0px',
-                    width: '85%'
+                    width: '80%'
                 }}>
                     <div style={{
                         display: 'flex',
@@ -64,10 +64,10 @@ const AppLayout = ({children}) => {
                     left: '0px',
                     height: '100%',
                     minHeight: '150px',
-                    minWidth: '75px',
+                    minWidth: '100px',
                     position: 'fixed',
                     top: '0px',
-                    width: '15%'
+                    width: '20%'
                 }}>
                     <Box sx={{height: '10%', minHeight: '15px'}}/>
                     <Drawer
@@ -76,8 +76,6 @@ const AppLayout = ({children}) => {
                         PaperProps={{
                             style: {
                                 backgroundColor: appTheme.primary,
-                                borderRight: 'solid',
-                                borderRightColor: appTheme.tertiary,
                                 bottom: '0px',
                                 left: '0px',
                                 overflowX: 'unset',
@@ -88,9 +86,9 @@ const AppLayout = ({children}) => {
                         sx={{
                             height: '90%',
                             minHeight: '142px',
-                            minWidth: '75px',
+                            minWidth: '100px',
                             position: 'fixed',
-                            width: '15%'
+                            width: '20%'
                         }}
                     >
                         <NavigationList/>

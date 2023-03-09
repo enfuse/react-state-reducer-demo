@@ -3,7 +3,7 @@ import {Card, Typography} from "@mui/material";
 import {useContext} from "react";
 import {AppContext} from "../App";
 
-const BackendQuestionnaire = () => {
+const MobileQuestionnaire = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
@@ -29,7 +29,7 @@ const BackendQuestionnaire = () => {
                         width: '100%'
                     }}>
                         <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
-                            Backend
+                            Mobile
                         </Typography>
                     </div>
                 </Card>
@@ -38,4 +38,4 @@ const BackendQuestionnaire = () => {
     )
 }
 
-export default BackendQuestionnaire
+export default MobileQuestionnaire

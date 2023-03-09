@@ -31,6 +31,14 @@ const NavigationList = () => {
                     }}
                 />
             </ListItem>
+            <ListItem>
+                <NavigationButton
+                    buttonTitle='Mobile'
+                    onClick={() => {
+                        navigate('/mobile')
+                    }}
+                />
+            </ListItem>
         </List>
     )
 }

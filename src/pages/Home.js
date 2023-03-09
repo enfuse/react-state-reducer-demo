@@ -11,18 +11,22 @@ const Home = () => {
         <>
             <AppLayout>
                 <Card elevation={1} sx={{
+                    alignItems: 'center',
                     backgroundColor: appTheme.tertiary,
                     color: appTheme.tertiary,
+                    display: 'flex',
+                    flexDirection: 'column',
                     height: '100%',
+                    justifyContent: 'flex-start',
                     outlineColor: appTheme.secondary,
                     outlineWidth: '1px',
                     width: '100%'
                 }}>
                     <div style={{
                         display: 'flex',
-                        height: '20%',
+                        height: '10%',
                         justifyContent: 'center',
-                        width: '50%'
+                        width: '100%'
                     }}>
                         <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
                             Home

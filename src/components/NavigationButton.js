@@ -14,6 +14,7 @@ const NavigationButton = ({buttonTitle, onClick}) => {
                 backgroundColor: appTheme.secondary,
                 border: 'solid',
                 borderColor: appTheme.secondary,
+                width: '100%',
                 '&:hover': {
                     backgroundColor: appTheme.tertiary,
                     color: appTheme.tertiary
@@ -26,8 +27,8 @@ const NavigationButton = ({buttonTitle, onClick}) => {
                 primaryTypographyProps={{
                     align: 'center',
                     color: appTheme.primary,
-                    fontSize: 20,
-                    fontWeight: 'bolder'
+                    fontSize: 16,
+                    fontWeight: 'bold'
                 }}
             />
         </ListItemButton>
