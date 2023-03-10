@@ -41,7 +41,7 @@ const AppLayout = ({children}) => {
                     minHeight: '50px',
                     minWidth: '100px',
                     width: '100%',
-                    zIndex: (theme) => theme.zIndex.drawer + 1
+                    zIndex: (theme) => theme.zIndex.drawer + 5
                 }}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Toolbar>

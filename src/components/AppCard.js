@@ -7,7 +7,7 @@ const AppCard = ({children}) => {
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
     return (
-        <Card elevation={1} sx={{
+        <Card elevation={5} sx={{
             alignItems: 'center',
             backgroundColor: appTheme.primary,
             border: 'solid ' + appTheme.tertiary,
