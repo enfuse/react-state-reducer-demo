@@ -1,5 +1,6 @@
 import {useContext} from "react";
 import {Typography} from "@mui/material";
+
 import {AppContext} from "../App";
 import AppLayout from "../components/AppLayout";
 import AppCard from "../components/AppCard";
@@ -9,7 +10,8 @@ import {
     CSharpIcon,
     ExpressJsIcon,
     FSharpIcon,
-    GoLangIcon, GroovyIcon,
+    GoLangIcon,
+    GroovyIcon,
     JavaIcon,
     JavaScriptIcon,
     KotlinIcon,
@@ -33,22 +35,43 @@ const Home = () => {
         <>
             <AppLayout>
                 <AppCard>
-                    <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column', height: '10%'}}>
+                    <div style={{
+                        alignItems: 'center',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '10%',
+                        justifyContent: 'center',
+                        paddingBottom: '2.5%',
+                        paddingTop: '2.5%',
+                        width: '75%'
+                    }}>
                         <Typography
                             color={appTheme.secondary}
                             fontFamily='-apple-system'
-                            fontSize='24px'
+                            fontSize='4vh'
                             fontWeight='bold'
                         >Home</Typography>
+                        <Typography
+                            color={appTheme.secondary}
+                            fontFamily='-apple-system'
+                            fontSize='2vh'
+                            fontWeight='normal'
+                        >
+                            Welcome to the Toolkit Builder!
+                            This application was designed to help developers choose the right tools for the job.
+                            Each page will contain a questionnaire that will guide you through the process.
+                            Once submitted, each questionnaire will be used to generate a toolkit for the related stack.
+                        </Typography>
                     </div>
                     <div style={{
                         alignItems: 'center',
                         display: 'flex',
                         flexDirection: 'row',
                         flexWrap: 'wrap',
-                        gap: '1vh',
+                        gap: '2%',
+                        height: '50%',
                         justifyContent: 'center',
-                        width: '50%'
+                        width: '75%'
                     }}>
                         <CPlainIcon/>
                         <CPlusIcon/>
