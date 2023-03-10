@@ -22,26 +22,26 @@ let iconSources = {
     vueJs: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
 }
 
-const CPlainIcon = () => <img src={iconSources.cPlain} alt={'C'} style={{height: '10vh', width: '10vh'}}/>
-const CPlusIcon = () => <img src={iconSources.cPlus} alt={'C++'} style={{height: '10vh', width: '10vh'}}/>
-const CSharpIcon = () => <img src={iconSources.cSharp} alt={'C#'} style={{height: '10vh', width: '10vh'}}/>
-const ExpressJsIcon = () => <img src={iconSources.expressJs} alt={'ExpressJS'} style={{height: '10vh', width: '10vh'}}/>
-const FSharpIcon = () => <img src={iconSources.fSharp} alt={'F#'} style={{height: '10vh', width: '10vh'}}/>
-const GoLangIcon = () => <img src={iconSources.goLang} alt={'GoLang'} style={{height: '10vh', width: '10vh'}}/>
-const GroovyIcon = () => <img src={iconSources.groovy} alt={'Groovy'} style={{height: '10vh', width: '10vh'}}/>
-const JavaIcon = () => <img src={iconSources.java} alt={'Java'} style={{height: '10vh', width: '10vh'}}/>
-const JavaScriptIcon = () => <img src={iconSources.javaScript} alt={'JavaScript'} style={{height: '10vh', width: '10vh'}}/>
-const KotlinIcon = () => <img src={iconSources.kotlin} alt={'Kotlin'} style={{height: '10vh', width: '10vh'}}/>
-const NextJsIcon = () => <img src={iconSources.nextJs} alt={'NextJS'} style={{height: '10vh', width: '10vh'}}/>
-const NodeJsIcon = () => <img src={iconSources.nodeJs} alt={'NodeJS'} style={{height: '10vh', width: '10vh'}}/>
-const PythonIcon = () => <img src={iconSources.python} alt={'Python'} style={{height: '10vh', width: '10vh'}}/>
-const RubyIcon = () => <img src={iconSources.ruby} alt={'Ruby'} style={{height: '10vh', width: '10vh'}}/>
-const ScalaIcon = () => <img src={iconSources.scala} alt={'Scala'} style={{height: '10vh', width: '10vh'}}/>
-const SvelteJsIcon = () => <img src={iconSources.svelteJs} alt={'SvelteJS'} style={{height: '10vh', width: '10vh'}}/>
-const SwiftIcon = () => <img src={iconSources.swift} alt={'Swift'} style={{height: '10vh', width: '10vh'}}/>
-const ThreeJsIcon = () => <img src={iconSources.threeJs} alt={'ThreeJS'} style={{height: '10vh', width: '10vh'}}/>
-const TypescriptIcon = () => <img src={iconSources.typescript} alt={'TypeScript'} style={{height: '10vh', width: '10vh'}}/>
-const VueJsIcon = () => <img src={iconSources.vueJs} alt={'VueJS'} style={{height: '10vh', width: '10vh'}}/>
+const CPlainIcon = () => <img src={iconSources.cPlain} alt={'C'} style={{height: '5vw', width: '5vw'}}/>
+const CPlusIcon = () => <img src={iconSources.cPlus} alt={'C++'} style={{height: '5vw', width: '5vw'}}/>
+const CSharpIcon = () => <img src={iconSources.cSharp} alt={'C#'} style={{height: '5vw', width: '5vw'}}/>
+const ExpressJsIcon = () => <img src={iconSources.expressJs} alt={'ExpressJS'} style={{height: '5vw', width: '5vw'}}/>
+const FSharpIcon = () => <img src={iconSources.fSharp} alt={'F#'} style={{height: '5vw', width: '5vw'}}/>
+const GoLangIcon = () => <img src={iconSources.goLang} alt={'GoLang'} style={{height: '5vw', width: '5vw'}}/>
+const GroovyIcon = () => <img src={iconSources.groovy} alt={'Groovy'} style={{height: '5vw', width: '5vw'}}/>
+const JavaIcon = () => <img src={iconSources.java} alt={'Java'} style={{height: '5vw', width: '5vw'}}/>
+const JavaScriptIcon = () => <img src={iconSources.javaScript} alt={'JavaScript'} style={{height: '5vw', width: '5vw'}}/>
+const KotlinIcon = () => <img src={iconSources.kotlin} alt={'Kotlin'} style={{height: '5vw', width: '5vw'}}/>
+const NextJsIcon = () => <img src={iconSources.nextJs} alt={'NextJS'} style={{height: '5vw', width: '5vw'}}/>
+const NodeJsIcon = () => <img src={iconSources.nodeJs} alt={'NodeJS'} style={{height: '5vw', width: '5vw'}}/>
+const PythonIcon = () => <img src={iconSources.python} alt={'Python'} style={{height: '5vw', width: '5vw'}}/>
+const RubyIcon = () => <img src={iconSources.ruby} alt={'Ruby'} style={{height: '5vw', width: '5vw'}}/>
+const ScalaIcon = () => <img src={iconSources.scala} alt={'Scala'} style={{height: '5vw', width: '5vw'}}/>
+const SvelteJsIcon = () => <img src={iconSources.svelteJs} alt={'SvelteJS'} style={{height: '5vw', width: '5vw'}}/>
+const SwiftIcon = () => <img src={iconSources.swift} alt={'Swift'} style={{height: '5vw', width: '5vw'}}/>
+const ThreeJsIcon = () => <img src={iconSources.threeJs} alt={'ThreeJS'} style={{height: '5vw', width: '5vw'}}/>
+const TypescriptIcon = () => <img src={iconSources.typescript} alt={'TypeScript'} style={{height: '5vw', width: '5vw'}}/>
+const VueJsIcon = () => <img src={iconSources.vueJs} alt={'VueJS'} style={{height: '5vw', width: '5vw'}}/>
 
 export {
     CPlainIcon,

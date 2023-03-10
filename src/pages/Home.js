@@ -39,16 +39,16 @@ const Home = () => {
                         alignItems: 'center',
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: '10%',
+                        gap: '1vh',
                         justifyContent: 'center',
-                        paddingBottom: '2.5%',
-                        paddingTop: '2.5%',
+                        paddingBottom: '1vh',
+                        paddingTop: '1vh',
                         width: '75%'
                     }}>
                         <Typography
                             color={appTheme.secondary}
                             fontFamily='-apple-system'
-                            fontSize='4vh'
+                            fontSize='2.5vh'
                             fontWeight='bold'
                         >Home</Typography>
                         <Typography
@@ -68,7 +68,7 @@ const Home = () => {
                         display: 'flex',
                         flexDirection: 'row',
                         flexWrap: 'wrap',
-                        gap: '2%',
+                        gap: '1vh',
                         height: '50%',
                         justifyContent: 'center',
                         width: '75%'
