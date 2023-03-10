@@ -27,8 +27,9 @@ const NavigationButton = ({buttonTitle, onClick}) => {
                 primaryTypographyProps={{
                     align: 'center',
                     color: appTheme.primary,
-                    fontSize: 16,
-                    fontWeight: 'bold'
+                    fontFamily: '-apple-system',
+                    fontSize: 20,
+                    fontWeight: 'bolder'
                 }}
             />
         </ListItemButton>

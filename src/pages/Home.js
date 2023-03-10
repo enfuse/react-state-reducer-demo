@@ -33,10 +33,13 @@ const Home = () => {
         <>
             <AppLayout>
                 <AppCard>
-                    <div style={{height: '10vh'}}>
-                        <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
-                            Home
-                        </Typography>
+                    <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column', height: '10%'}}>
+                        <Typography
+                            color={appTheme.secondary}
+                            fontFamily='-apple-system'
+                            fontSize='24px'
+                            fontWeight='bold'
+                        >Home</Typography>
                     </div>
                     <div style={{
                         alignItems: 'center',

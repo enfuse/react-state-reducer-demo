@@ -45,19 +45,38 @@ const AppLayout = ({children}) => {
                 }}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Toolbar>
-                            <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
-                                Toolkit Builder
-                            </Typography>
+                            <Typography
+                                color={appTheme.secondary}
+                                fontFamily='-apple-system'
+                                fontSize='24px'
+                                fontWeight='bold'
+                            >Toolkit Builder</Typography>
                         </Toolbar>
                         <Button
-                            endIcon={appContext.isDarkThemeActive ? <LightModeOutlinedIcon/> : <DarkModeOutlinedIcon/>}
+                            endIcon={appContext.isDarkThemeActive
+                                ? <LightModeOutlinedIcon/>
+                                : <DarkModeOutlinedIcon/>
+                            }
                             onClick={() => {
                                 appContext.setIsDarkThemeActive(!appContext.isDarkThemeActive)
                             }}
                             size='medium'
                             variant='outlined'
                         >
-                            {appContext.isDarkThemeActive ? 'Light Mode' : 'Dark Mode'}
+                            {appContext.isDarkThemeActive
+                                ? <Typography
+                                    color={appTheme.tertiary}
+                                    fontFamily='-apple-system'
+                                    fontSize='16px'
+                                    fontWeight='normal'
+                                >Light Mode</Typography>
+                                : <Typography
+                                    color={appTheme.tertiary}
+                                    fontFamily='-apple-system'
+                                    fontSize='16px'
+                                    fontWeight='normal'
+                                >Dark Mode</Typography>
+                            }
                         </Button>
                     </div>
                 </AppBar>
