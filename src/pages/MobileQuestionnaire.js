@@ -1,8 +1,9 @@
-import AppLayout from "../components/AppLayout";
-import {Card, Typography} from "@mui/material";
 import {useContext} from "react";
+import {Typography} from "@mui/material";
+
 import {AppContext} from "../App";
 import AppCard from "../components/AppCard";
+import AppLayout from "../components/AppLayout";
 
 const MobileQuestionnaire = () => {
     let appContext = useContext(AppContext)

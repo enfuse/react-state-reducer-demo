@@ -2,8 +2,8 @@ import {useContext} from "react";
 import {Typography} from "@mui/material";
 
 import {AppContext} from "../App";
-import AppLayout from "../components/AppLayout";
 import AppCard from "../components/AppCard";
+import AppLayout from "../components/AppLayout";
 import {
     CPlainIcon,
     CPlusIcon,
