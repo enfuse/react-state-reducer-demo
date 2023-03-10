@@ -11,25 +11,24 @@ const NavigationButton = ({buttonTitle, onClick}) => {
             color={appTheme.secondary}
             onClick={onClick}
             sx={{
-                backgroundColor: appTheme.secondary,
+                backgroundColor: appTheme.primary,
                 border: 'solid',
-                borderColor: appTheme.secondary,
+                borderColor: appTheme.tertiary,
+                boxShadow: 5,
                 width: '100%',
                 '&:hover': {
-                    backgroundColor: appTheme.tertiary,
-                    color: appTheme.tertiary
+                    backgroundColor: appTheme.tertiary
                 }
             }}
         >
             <ListItemText
-                color={appTheme.primary}
                 primary={buttonTitle}
                 primaryTypographyProps={{
                     align: 'center',
-                    color: appTheme.primary,
+                    color: appTheme.secondary,
                     fontFamily: '-apple-system',
-                    fontSize: 20,
-                    fontWeight: 'bolder'
+                    fontSize: '2vh',
+                    fontWeight: 'bold'
                 }}
             />
         </ListItemButton>
