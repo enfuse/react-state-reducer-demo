@@ -13,14 +13,21 @@ const MobileQuestionnaire = () => {
             <AppLayout>
                 <AppCard>
                     <div style={{
+                        alignItems: 'center',
                         display: 'flex',
-                        height: '10%',
+                        flexDirection: 'column',
+                        gap: '1vh',
                         justifyContent: 'center',
-                        width: '100%'
+                        paddingBottom: '1vh',
+                        paddingTop: '1vh',
+                        width: '75%'
                     }}>
-                        <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
-                            Mobile
-                        </Typography>
+                        <Typography
+                            color={appTheme.secondary}
+                            fontFamily='-apple-system'
+                            fontSize='2.5vh'
+                            fontWeight='bold'
+                        >Mobile</Typography>
                     </div>
                 </AppCard>
             </AppLayout>

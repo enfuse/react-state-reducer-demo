@@ -1,5 +1,5 @@
 import AppLayout from "../components/AppLayout";
-import {Card, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {useContext} from "react";
 import {AppContext} from "../App";
 import AppCard from "../components/AppCard";
@@ -13,14 +13,21 @@ const BackendQuestionnaire = () => {
             <AppLayout>
                 <AppCard>
                     <div style={{
+                        alignItems: 'center',
                         display: 'flex',
-                        height: '10%',
+                        flexDirection: 'column',
+                        gap: '1vh',
                         justifyContent: 'center',
-                        width: '100%'
+                        paddingBottom: '1vh',
+                        paddingTop: '1vh',
+                        width: '75%'
                     }}>
-                        <Typography color={appTheme.secondary} fontSize='24px' fontWeight='bold'>
-                            Backend
-                        </Typography>
+                        <Typography
+                            color={appTheme.secondary}
+                            fontFamily='-apple-system'
+                            fontSize='2.5vh'
+                            fontWeight='bold'
+                        >Backend</Typography>
                     </div>
                 </AppCard>
             </AppLayout>
