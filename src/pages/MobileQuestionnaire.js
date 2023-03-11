@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {Typography} from "@mui/material";
 
 import {AppContext} from "../App";
-import AppCard from "../components/AppCard";
+import AppPage from "../components/AppPage";
 import AppLayout from "../components/AppLayout";
 
 const MobileQuestionnaire = () => {
@@ -12,7 +12,7 @@ const MobileQuestionnaire = () => {
     return (
         <>
             <AppLayout>
-                <AppCard>
+                <AppPage>
                     <div style={{
                         alignItems: 'center',
                         display: 'flex',
@@ -30,7 +30,7 @@ const MobileQuestionnaire = () => {
                             fontWeight='bold'
                         >Mobile</Typography>
                     </div>
-                </AppCard>
+                </AppPage>
             </AppLayout>
         </>
     )
