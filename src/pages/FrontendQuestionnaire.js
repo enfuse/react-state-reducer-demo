@@ -2,7 +2,7 @@ import {useContext, useReducer} from "react";
 import {Typography} from "@mui/material";
 
 import {AppContext} from "../App";
-import AppCard from "../components/AppCard";
+import AppPage from "../components/AppPage";
 import AppLayout from "../components/AppLayout";
 import {frontendStateReducer} from "./FrontendQuestionnaireState";
 
@@ -14,7 +14,7 @@ const FrontendQuestionnaire = () => {
     return (
         <>
             <AppLayout>
-                <AppCard>
+                <AppPage>
                     <div style={{
                         alignItems: 'center',
                         display: 'flex',
@@ -32,7 +32,7 @@ const FrontendQuestionnaire = () => {
                             fontWeight='bold'
                         >Frontend</Typography>
                     </div>
-                </AppCard>
+                </AppPage>
             </AppLayout>
         </>
     )

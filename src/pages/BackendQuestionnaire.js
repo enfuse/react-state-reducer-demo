@@ -1,18 +1,23 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {Typography} from "@mui/material";
 
 import {AppContext} from "../App";
-import AppCard from "../components/AppCard";
+import AppPage from "../components/AppPage";
 import AppLayout from "../components/AppLayout";
+import {SelectUserInterestInFunctional, SelectUserInterestInMicrosoft} from "../components/RadioGroups";
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
+    const [userInterestInFunctional, setUserInterestInFunctional] = useState('Not Interested')
+    const [userInterestInMicrosoft, setUserInterestInMicrosoft] = useState('Not Interested')
+    const [userInterestInWebApps, setUserInterestInWebApps] = useState('Not Interested')
+
     return (
         <>
             <AppLayout>
-                <AppCard>
+                <AppPage>
                     <div style={{
                         alignItems: 'center',
                         display: 'flex',
@@ -29,8 +34,18 @@ const BackendQuestionnaire = () => {
                             fontSize='2.5vh'
                             fontWeight='bold'
                         >Backend</Typography>
+                        <div>
+                            <SelectUserInterestInFunctional
+                                userInterestInFunctional={userInterestInFunctional}
+                                setUserInterestInFunctional={setUserInterestInFunctional}
+                            />
+                            <SelectUserInterestInMicrosoft
+                                userInterestInMicrosoft={userInterestInMicrosoft}
+                                setUserInterestInMicrosoft={setUserInterestInMicrosoft}
+                            />
+                        </div>
                     </div>
-                </AppCard>
+                </AppPage>
             </AppLayout>
         </>
     )

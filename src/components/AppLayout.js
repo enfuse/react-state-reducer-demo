@@ -29,8 +29,8 @@ const AppLayout = ({children}) => {
                     <div style={{
                         display: 'flex',
                         flexDirection: 'row',
-                        height: '90%',
-                        width: '90%'
+                        height: '95.75%',
+                        width: '95.75%'
                     }}>
                         {children}
                     </div>
@@ -43,12 +43,17 @@ const AppLayout = ({children}) => {
                     width: '100%',
                     zIndex: (theme) => theme.zIndex.drawer + 5
                 }}>
-                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                    <div style={{
+                        alignItems: 'center',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between'
+                    }}>
                         <Toolbar>
                             <Typography
                                 color={appTheme.secondary}
                                 fontFamily='-apple-system'
-                                fontSize='24px'
+                                fontSize='5vh'
                                 fontWeight='bold'
                             >Toolkit Builder</Typography>
                         </Toolbar>
@@ -60,7 +65,7 @@ const AppLayout = ({children}) => {
                             onClick={() => {
                                 appContext.setIsDarkThemeActive(!appContext.isDarkThemeActive)
                             }}
-                            size='medium'
+                            size='large'
                             variant='outlined'
                         >
                             {appContext.isDarkThemeActive

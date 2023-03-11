@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {Typography} from "@mui/material";
 
 import {AppContext} from "../App";
-import AppCard from "../components/AppCard";
+import AppPage from "../components/AppPage";
 import AppLayout from "../components/AppLayout";
 import {
     CPlainIcon,
@@ -34,7 +34,7 @@ const Home = () => {
     return (
         <>
             <AppLayout>
-                <AppCard>
+                <AppPage>
                     <div style={{
                         alignItems: 'center',
                         display: 'flex',
@@ -94,7 +94,7 @@ const Home = () => {
                         <TypescriptIcon/>
                         <VueJsIcon/>
                     </div>
-                </AppCard>
+                </AppPage>
             </AppLayout>
         </>
     )

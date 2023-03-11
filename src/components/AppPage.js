@@ -3,7 +3,7 @@ import {Card} from "@mui/material";
 
 import {AppContext} from "../App";
 
-const AppCard = ({children}) => {
+const AppPage = ({children}) => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
@@ -23,4 +23,4 @@ const AppCard = ({children}) => {
     )
 }
 
-export default AppCard
+export default AppPage
