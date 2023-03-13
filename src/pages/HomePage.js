@@ -27,7 +27,7 @@ import {
     VueJsIcon
 } from "../components/LanguageIcons";
 
-const Home = () => {
+const HomePage = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 
@@ -100,4 +100,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default HomePage
