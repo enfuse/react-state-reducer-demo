@@ -1,6 +1,7 @@
 let iconSources = {
 		android: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
 		angular: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+		dart: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
 		django: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
 		dotnet: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
 		embedded: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-plain-wordmark.svg",
@@ -14,6 +15,7 @@ let iconSources = {
 
 const AndroidIcon = () => <img src={iconSources.android} alt='Android' style={{height: '5vw', width: '5vw'}}/>
 const AngularIcon = () => <img src={iconSources.angular} alt='Angular' style={{height: '5vw', width: '5vw'}}/>
+const DartIcon = () => <img src={iconSources.dart} alt='Dart' style={{height: '5vw', width: '5vw'}}/>
 const DjangoIcon = () => <img src={iconSources.django} alt='Django' style={{height: '5vw', width: '5vw'}}/>
 const DotNetIcon = () => <img src={iconSources.dotnet} alt='.NET' style={{height: '5vw', width: '5vw'}}/>
 const EmbeddedCIcon = () => <img src={iconSources.embedded} alt='Embedded C' style={{height: '5vw', width: '5vw'}}/>
@@ -27,6 +29,7 @@ const SpringIcon = () => <img src={iconSources.spring} alt='Spring' style={{heig
 export {
 		AndroidIcon,
 		AngularIcon,
+		DartIcon,
 		DjangoIcon,
 		DotNetIcon,
 		EmbeddedCIcon,

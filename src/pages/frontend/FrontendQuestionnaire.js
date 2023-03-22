@@ -22,10 +22,6 @@ const FrontendQuestionnaire = () => {
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
     const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState, undefined);
     
-    useEffect(() => {
-        console.log(frontendState)
-    }, [frontendState])
-    
     const generateResults = (event) => {
         event.preventDefault()
         frontendDispatch({
@@ -173,7 +169,7 @@ const FrontendQuestionnaire = () => {
                                     >
                                         Language
                                     </Typography>
-                                    <IconFrame icon={frontendState.resultStatus.languageIcon}/>
+                                    {frontendState.resultStatus.languageIcon}
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
@@ -192,14 +188,14 @@ const FrontendQuestionnaire = () => {
                                     >
                                         Testing
                                     </Typography>
-                                    <IconFrame icon={frontendState.resultStatus.testingIcon}/>
+                                    {frontendState.resultStatus.testingIcon}
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
                                         fontSize='2vh'
                                         fontWeight='bold'
                                     >
-                                      {frontendState.resultStatus.testingDescription}
+                                        {frontendState.resultStatus.testingDescription}
                                     </Typography>
                                 </ResultCard>
                             </div>
