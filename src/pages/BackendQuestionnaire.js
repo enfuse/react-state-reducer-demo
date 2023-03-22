@@ -1,23 +1,18 @@
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {Typography} from "@mui/material";
 
-import {AppContext} from "../App";
+import {AppContext, SELECTIONS} from "../App";
 import AppPage from "../components/AppPage";
 import AppLayout from "../components/AppLayout";
 import {
     SelectUserInterestInEmbedded,
     SelectUserInterestInFunctional,
-    SelectUserInterestInMicrosoft, SelectUserInterestInModernity,
+    SelectUserInterestInMicrosoft,
+    SelectUserInterestInModernity,
     SelectUserInterestInWebApps
 } from "./BackendRadioGroups";
 import SubmitButton from "../components/SubmitButton";
-
-export const SELECTIONS = Object.freeze({
-    NOT_INTERESTED: 0,
-    SLIGHTLY_INTERESTED: 1,
-    VERY_INTERESTED: 2
-})
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)

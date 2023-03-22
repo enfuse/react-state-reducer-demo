@@ -5,6 +5,12 @@ import FrontendQuestionnaire from "./pages/FrontendQuestionnaire";
 import HomePage from "./pages/HomePage";
 import MobileQuestionnaire from "./pages/MobileQuestionnaire";
 
+export const SELECTIONS = Object.freeze({
+  NOT_INTERESTED: 0,
+  SLIGHTLY_INTERESTED: 1,
+  VERY_INTERESTED: 2
+})
+
 export const AppContext = createContext({
     isDarkThemeActive: false,
     setIsDarkThemeActive: (newState) => {},
