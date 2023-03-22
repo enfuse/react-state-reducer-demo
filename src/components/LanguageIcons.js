@@ -11,6 +11,7 @@ let iconSources = {
     kotlin: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
     nextJs: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg',
     nodeJs: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    objectiveC: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/objectivec/objectivec-plain.svg",
     python: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
     ruby: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg',
     rust: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg',
@@ -34,6 +35,7 @@ const JavaScriptIcon = () => <img src={iconSources.javaScript} alt={'JavaScript'
 const KotlinIcon = () => <img src={iconSources.kotlin} alt={'Kotlin'} style={{height: '5vw', width: '5vw'}}/>
 const NextJsIcon = () => <img src={iconSources.nextJs} alt={'NextJS'} style={{height: '5vw', width: '5vw'}}/>
 const NodeJsIcon = () => <img src={iconSources.nodeJs} alt={'NodeJS'} style={{height: '5vw', width: '5vw'}}/>
+const ObjectiveCIcon = () => <img src={iconSources.objectiveC} alt={'Objective C'} style={{height: '5vw', width: '5vw'}}/>
 const PythonIcon = () => <img src={iconSources.python} alt={'Python'} style={{height: '5vw', width: '5vw'}}/>
 const RubyIcon = () => <img src={iconSources.ruby} alt={'Ruby'} style={{height: '5vw', width: '5vw'}}/>
 const ScalaIcon = () => <img src={iconSources.scala} alt={'Scala'} style={{height: '5vw', width: '5vw'}}/>
@@ -56,6 +58,7 @@ export {
     KotlinIcon,
     NextJsIcon,
     NodeJsIcon,
+    ObjectiveCIcon,
     PythonIcon,
     RubyIcon,
     ScalaIcon,
