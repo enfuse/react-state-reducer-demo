@@ -1,71 +1,7 @@
 import {useContext} from "react";
-import {AppContext, SELECTIONS} from "../App";
+import {AppContext, SELECTIONS} from "../../App";
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
-import {EXPERIENCE} from "./FrontendQuestionnaireState";
-
-const SelectUserExperienceWithFrontend = ({userExperienceWithFrontend, setUserExperienceWithFrontend}) => {
-	let appContext = useContext(AppContext)
-	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
-	let radioLabelProps = {
-		color: appTheme.secondary,
-		fontFamily: '-apple-system',
-		fontSize: '1.75vh',
-		fontWeight: 'regular'
-	}
-	
-	return (
-		<FormControl>
-			<FormLabel id="experience-selection-label" sx={{
-				color: radioLabelProps.color,
-				fontFamily: radioLabelProps.fontFamily,
-				fontSize: radioLabelProps.fontSize,
-				fontWeight: 'bold',
-				'&.Mui-focused': {color: appTheme.secondary}
-			}}>How much experience do you have using the core frontend skill-set? (Javascript, CSS, & HTML)</FormLabel>
-			<RadioGroup
-				aria-labelledby="experience-selection-label"
-				name="experience-selection"
-				onChange={(event) => setUserExperienceWithFrontend(event.target.value)}
-				row={true}
-				value={userExperienceWithFrontend}
-			>
-				<FormControlLabel
-					componentsProps={{typography: radioLabelProps}}
-					control={
-						<Radio sx={{
-							color: appTheme.secondary,
-							'&.Mui-checked': {color: appTheme.secondary}
-						}}/>
-					}
-					label="I have very little frontend experience"
-					value={EXPERIENCE.NOT_EXPERIENCED}
-				/>
-				<FormControlLabel
-					componentsProps={{typography: radioLabelProps}}
-					control={
-						<Radio sx={{
-							color: appTheme.secondary,
-							'&.Mui-checked': {color: appTheme.secondary}
-						}}/>
-					}
-					label="I have a moderate amount of frontend experience"
-					value={EXPERIENCE.SLIGHTLY_EXPERIENCED}
-				/>
-				<FormControlLabel
-					componentsProps={{typography: radioLabelProps}}
-					control={
-						<Radio sx={{
-							color: appTheme.secondary,
-							'&.Mui-checked': {color: appTheme.secondary}
-						}}/>
-					}
-					label="I have a huge amount of frontend experience"
-					value={EXPERIENCE.VERT_EXPERIENCED}
-				/>
-			</RadioGroup>
-		</FormControl>
-	)
-}
+import {PLATFORMS} from "./MobileQuestionnaireState";
 
 const SelectUserInterestInFunctional = ({userInterestInFunctional, setUserInterestInFunctional}) => {
 	let appContext = useContext(AppContext)
@@ -213,7 +149,7 @@ const SelectUserInterestInOpenSource = ({userInterestInOpenSource, setUserIntere
 				fontSize: radioLabelProps.fontSize,
 				fontWeight: 'bold',
 				'&.Mui-focused': {color: appTheme.secondary}
-			}}>Are you interested in working with open-source/third-party libraries</FormLabel>
+			}}>Are you interested in working with open-source/third-party libraries?</FormLabel>
 			<RadioGroup
 				aria-labelledby="open-source-selection-label"
 				name="open-source-selection"
@@ -259,7 +195,7 @@ const SelectUserInterestInOpenSource = ({userInterestInOpenSource, setUserIntere
 	)
 }
 
-const SelectUserInterestInUpdates = ({userInterestInUpdates, setUserInterestInUpdates}) => {
+const SelectUserInterestInSingleLanguage = ({userInterestInSingleLanguage, setUserInterestInSingleLanguage}) => {
 	let appContext = useContext(AppContext)
 	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 	let radioLabelProps = {
@@ -271,19 +207,19 @@ const SelectUserInterestInUpdates = ({userInterestInUpdates, setUserInterestInUp
 	
 	return (
 		<FormControl>
-			<FormLabel id="updates-selection-label" sx={{
+			<FormLabel id="single-language-selection-label" sx={{
 				color: radioLabelProps.color,
 				fontFamily: radioLabelProps.fontFamily,
 				fontSize: radioLabelProps.fontSize,
 				fontWeight: 'bold',
 				'&.Mui-focused': {color: appTheme.secondary}
-			}}>Do you enjoy working with software that is frequently updated?</FormLabel>
+			}}>Would you like to develop your mobile app and the APIs that serve it in the same language?</FormLabel>
 			<RadioGroup
-				aria-labelledby="updates-selection-label"
-				name="updates-selection"
-				onChange={(event) => setUserInterestInUpdates(event.target.value)}
+				aria-labelledby="single-language-selection-label"
+				name="single-language-selection"
+				onChange={(event) => setUserInterestInSingleLanguage(event.target.value)}
 				row={true}
-				value={userInterestInUpdates}
+				value={userInterestInSingleLanguage}
 			>
 				<FormControlLabel
 					componentsProps={{typography: radioLabelProps}}
@@ -293,7 +229,7 @@ const SelectUserInterestInUpdates = ({userInterestInUpdates, setUserInterestInUp
 							'&.Mui-checked': {color: appTheme.secondary}
 						}}/>
 					}
-					label="I prefer using software with minimal updates"
+					label="I prefer to avoid single-language solutions"
 					value={SELECTIONS.NOT_INTERESTED}
 				/>
 				<FormControlLabel
@@ -315,7 +251,7 @@ const SelectUserInterestInUpdates = ({userInterestInUpdates, setUserInterestInUp
 							'&.Mui-checked': {color: appTheme.secondary}
 						}}/>
 					}
-					label="I prefer to use software with frequent updates"
+					label="I prefer to use single-language solutions"
 					value={SELECTIONS.VERY_INTERESTED}
 				/>
 			</RadioGroup>
@@ -323,10 +259,74 @@ const SelectUserInterestInUpdates = ({userInterestInUpdates, setUserInterestInUp
 	)
 }
 
+const SelectUserPlatformPreference = ({userPlatformPreference, setUserPlatformPreference}) => {
+	let appContext = useContext(AppContext)
+	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+	let radioLabelProps = {
+		color: appTheme.secondary,
+		fontFamily: '-apple-system',
+		fontSize: '1.75vh',
+		fontWeight: 'regular'
+	}
+	
+	return (
+		<FormControl>
+			<FormLabel id="platform-selection-label" sx={{
+				color: radioLabelProps.color,
+				fontFamily: radioLabelProps.fontFamily,
+				fontSize: radioLabelProps.fontSize,
+				fontWeight: 'bold',
+				'&.Mui-focused': {color: appTheme.secondary}
+			}}>Which mobile platforms will your application be deployed on?</FormLabel>
+			<RadioGroup
+				aria-labelledby="platform-selection-label"
+				name="platform-selection"
+				onChange={(event) => setUserPlatformPreference(event.target.value)}
+				row={true}
+				value={userPlatformPreference}
+			>
+				<FormControlLabel
+					componentsProps={{typography: radioLabelProps}}
+					control={
+						<Radio sx={{
+							color: appTheme.secondary,
+							'&.Mui-checked': {color: appTheme.secondary}
+						}}/>
+					}
+					label="I will be deploying apps on Android"
+					value={PLATFORMS.ANDROID}
+				/>
+				<FormControlLabel
+					componentsProps={{typography: radioLabelProps}}
+					control={
+						<Radio sx={{
+							color: appTheme.secondary,
+							'&.Mui-checked': {color: appTheme.secondary}
+						}}/>
+					}
+					label="I will be deploying cross-platform apps"
+					value={PLATFORMS.CROSS_PLATFORM}
+				/>
+				<FormControlLabel
+					componentsProps={{typography: radioLabelProps}}
+					control={
+						<Radio sx={{
+							color: appTheme.secondary,
+							'&.Mui-checked': {color: appTheme.secondary}
+						}}/>
+					}
+					label="I will be deploying apps on iOS"
+					value={PLATFORMS.IOS}
+				/>
+			</RadioGroup>
+		</FormControl>
+	)
+}
+
 export {
-	SelectUserExperienceWithFrontend,
-	SelectUserInterestInFunctional,
-	SelectUserInterestInModernity,
-	SelectUserInterestInOpenSource,
-	SelectUserInterestInUpdates
+		SelectUserInterestInFunctional,
+		SelectUserInterestInModernity,
+		SelectUserInterestInOpenSource,
+		SelectUserInterestInSingleLanguage,
+		SelectUserPlatformPreference
 }

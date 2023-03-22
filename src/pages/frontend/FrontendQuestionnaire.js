@@ -2,9 +2,9 @@ import {useContext, useReducer} from "react";
 import {Typography} from "@mui/material";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 
-import {AppContext} from "../App";
-import AppLayout from "../components/AppLayout";
-import AppPage from "../components/AppPage";
+import {AppContext} from "../../App";
+import AppLayout from "../../components/AppLayout";
+import AppPage from "../../components/AppPage";
 import {defaultFrontendState, FRONTEND_ACTIONS, frontendStateReducer} from "./FrontendQuestionnaireState";
 import {
   SelectUserExperienceWithFrontend,
@@ -12,7 +12,7 @@ import {
   SelectUserInterestInModernity, SelectUserInterestInOpenSource,
   SelectUserInterestInUpdates
 } from "./FrontendRadioGroups"
-import SubmitButton from "../components/SubmitButton";
+import SubmitButton from "../../components/SubmitButton";
 
 const FrontendQuestionnaire = () => {
     let appContext = useContext(AppContext)

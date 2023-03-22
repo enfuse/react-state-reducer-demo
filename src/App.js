@@ -1,9 +1,9 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {createContext, useState} from "react";
-import BackendQuestionnaire from "./pages/BackendQuestionnaire";
-import FrontendQuestionnaire from "./pages/FrontendQuestionnaire";
+import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
+import FrontendQuestionnaire from "./pages/frontend/FrontendQuestionnaire";
 import HomePage from "./pages/HomePage";
-import MobileQuestionnaire from "./pages/MobileQuestionnaire";
+import MobileQuestionnaire from "./pages/mobile/MobileQuestionnaire";
 
 export const SELECTIONS = Object.freeze({
   NOT_INTERESTED: 0,

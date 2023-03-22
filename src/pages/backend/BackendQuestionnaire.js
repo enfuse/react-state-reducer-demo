@@ -2,9 +2,9 @@ import {useContext, useState} from "react";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {Typography} from "@mui/material";
 
-import {AppContext, SELECTIONS} from "../App";
-import AppPage from "../components/AppPage";
-import AppLayout from "../components/AppLayout";
+import {AppContext, SELECTIONS} from "../../App";
+import AppPage from "../../components/AppPage";
+import AppLayout from "../../components/AppLayout";
 import {
     SelectUserInterestInEmbedded,
     SelectUserInterestInFunctional,
@@ -12,7 +12,7 @@ import {
     SelectUserInterestInModernity,
     SelectUserInterestInWebApps
 } from "./BackendRadioGroups";
-import SubmitButton from "../components/SubmitButton";
+import SubmitButton from "../../components/SubmitButton";
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)

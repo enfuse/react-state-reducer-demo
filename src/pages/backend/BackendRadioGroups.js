@@ -1,8 +1,8 @@
 import {useContext} from "react";
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
 
-import {AppContext} from "../App";
-import {SELECTIONS} from "../App";
+import {AppContext} from "../../App";
+import {SELECTIONS} from "../../App";
 
 const SelectUserInterestInEmbedded = ({userInterestInEmbedded, setUserInterestInEmbedded}) => {
     let appContext = useContext(AppContext)
