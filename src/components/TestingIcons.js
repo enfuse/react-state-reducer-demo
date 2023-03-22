@@ -2,6 +2,7 @@ let iconSources = {
 		espresso: 'https://e7.pngegg.com/pngimages/390/563/png-clipart-test-application-test-automation-android-espresso-software-testing-android-android-smile.png',
 		jest: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
 		junit: "https://asset.brandfetch.io/idD7RfhCFS/id3KSPzOxb.png",
+		kotlin: "",
 		nunit: 'https://avatars.githubusercontent.com/u/2678858?s=280&v=4',
 		pytest: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-plain-wordmark.svg"
 }

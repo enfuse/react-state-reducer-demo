@@ -1,4 +1,5 @@
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {Typography} from "@mui/material";
 
@@ -14,9 +15,9 @@ import {
 } from "./BackendRadioGroups";
 import SubmitButton from "../../components/SubmitButton";
 import ResultCard from "../../components/ResultCard";
-import {DotNetIcon, SpringIcon} from "../../components/FrameworkIcons";
-import {CSharpIcon, FSharpIcon, JavaIcon} from "../../components/LanguageIcons";
-import {JUnitIcon, NUnitIcon} from "../../components/TestingIcons";
+import {DotNetIcon, FlaskIcon, KtorIcon, SpringIcon} from "../../components/FrameworkIcons";
+import {CSharpIcon, FSharpIcon, JavaIcon, KotlinIcon, PythonIcon} from "../../components/LanguageIcons";
+import {JUnitIcon, NUnitIcon, PyTestIcon} from "../../components/TestingIcons";
 import IconFrame from "../../components/IconFrame";
 
 const BackendQuestionnaire = () => {
@@ -38,7 +39,8 @@ const BackendQuestionnaire = () => {
     const [languageDescription, setLanguageDescription] = useState('')
     const [testingDescription, setTestingDescription] = useState('')
     
-    const generateResults = () => {
+    const generateResults = (event) => {
+        event.preventDefault()
         if (userInterestInMicrosoft === '2'
             && userInterestInFunctional === '2'
         ) {
@@ -48,23 +50,70 @@ const BackendQuestionnaire = () => {
             setLanguageIcon(<FSharpIcon/>)
             setTestingDescription('NUnit')
             setTestingIcon(<NUnitIcon/>)
-        } else if (userInterestInMicrosoft === '2') {
+        } else if (userInterestInMicrosoft === '2'
+          && (userInterestInFunctional === '1' || userInterestInFunctional === '0')
+        ) {
             setFrameworkDescription('.NET')
             setFrameworkIcon(<DotNetIcon/>)
             setLanguageDescription('C#')
             setLanguageIcon(<CSharpIcon/>)
             setTestingDescription('NUnit')
             setTestingIcon(<NUnitIcon/>)
-        } else {
+        } else if ((userInterestInMicrosoft === '0' || userInterestInMicrosoft === '1')
+            && (userInterestInWebApps === '1' || userInterestInWebApps === '2')
+            && ((userInterestInFunctional === '0' || userInterestInFunctional === '1')
+                || userInterestInModernity === '0'
+            )
+        ) {
             setFrameworkDescription('Spring')
             setFrameworkIcon(<SpringIcon/>)
             setLanguageDescription('Java')
             setLanguageIcon(<JavaIcon/>)
             setTestingDescription('JUnit')
             setTestingIcon(<JUnitIcon/>)
+        } else if ((userInterestInMicrosoft === '0' || userInterestInMicrosoft === '1')
+          && (userInterestInWebApps === '1' || userInterestInWebApps === '2')
+          && (userInterestInFunctional === '1' || userInterestInFunctional === '2')
+          && (userInterestInModernity === '1')
+        ) {
+            setFrameworkDescription('Spring')
+            setFrameworkIcon(<SpringIcon/>)
+            setLanguageDescription('Kotlin')
+            setLanguageIcon(<KotlinIcon/>)
+            setTestingDescription('JUnit')
+            setTestingIcon(<JUnitIcon/>)
+        } else if ((userInterestInMicrosoft === '0' || userInterestInMicrosoft === '1')
+          && (userInterestInWebApps === '1' || userInterestInWebApps === '2')
+          && (userInterestInFunctional === '1' || userInterestInFunctional === '2')
+          && (userInterestInModernity === '2')
+        ) {
+            setFrameworkDescription('Ktor')
+            setFrameworkIcon(<KtorIcon/>)
+            setLanguageDescription('Kotlin')
+            setLanguageIcon(<KotlinIcon/>)
+            setTestingDescription('Kotlin Test')
+            setTestingIcon(<KotlinIcon/>)
+        } else {
+            setFrameworkDescription('Flask')
+            setFrameworkIcon(<FlaskIcon/>)
+            setLanguageDescription('Python')
+            setLanguageIcon(<PythonIcon/>)
+            setTestingDescription('pytest')
+            setTestingIcon(<PyTestIcon/>)
         }
     
         setPageContent('results')
+    }
+    
+    const resetPage = (event) => {
+        event.preventDefault()
+        setFrameworkDescription('')
+        setFrameworkIcon(<></>)
+        setLanguageDescription('')
+        setLanguageIcon(<></>)
+        setTestingDescription('')
+        setTestingIcon(<></>)
+        setPageContent('quiz')
     }
 
     return (
@@ -97,12 +146,20 @@ const BackendQuestionnaire = () => {
                                 fontSize='2.5vh'
                                 fontWeight='bold'
                             >Backend</Typography>
-                            <SubmitButton
-                                buttonIcon={<TaskAltIcon/>}
-                                buttonLabel='Submit'
-                                isDisabled={false}
-                                onClick={generateResults}
-                            />
+                            {pageContent === 'quiz'
+                                ? <SubmitButton
+                                    buttonIcon={<TaskAltIcon/>}
+                                    buttonLabel='Submit'
+                                    isDisabled={false}
+                                    onClick={generateResults}
+                                />
+                                : <SubmitButton
+                                    buttonIcon={<RestartAltIcon/>}
+                                    buttonLabel={'Try Again'}
+                                    isDisabled={pageContent === 'quiz'}
+                                    onClick={resetPage}
+                                />
+                            }
                         </div>
                         {pageContent === 'quiz'
                             ? <div>

@@ -7,6 +7,7 @@ let iconSources = {
 		flask: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original-wordmark.svg",
 		flutter: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-plain.svg",
 		ios: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
+		ktor: "https://avatars.githubusercontent.com/u/28214161?s=280&v=4",
 		react: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
 		spring: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
 }
@@ -19,6 +20,7 @@ const EmbeddedCIcon = () => <img src={iconSources.embedded} alt='Embedded C' sty
 const FlaskIcon = () => <img src={iconSources.flask} alt='Flask' style={{height: '5vw', width: '5vw'}}/>
 const FlutterIcon = () => <img src={iconSources.flutter} alt='Flutter' style={{height: '5vw', width: '5vw'}}/>
 const IosIcon = () => <img src={iconSources.ios} alt='iOS' style={{height: '5vw', width: '5vw'}}/>
+const KtorIcon = () => <img src={iconSources.ktor} alt='Ktor' style={{height: '5vw', width: '5vw'}}/>
 const ReactIcon = () => <img src={iconSources.react} alt='React' style={{height: '5vw', width: '5vw'}}/>
 const SpringIcon = () => <img src={iconSources.spring} alt='Spring' style={{height: '5vw', width: '5vw'}}/>
 
@@ -31,6 +33,7 @@ export {
 		FlaskIcon,
 		FlutterIcon,
 		IosIcon,
+		KtorIcon,
 		ReactIcon,
 		SpringIcon
 }
