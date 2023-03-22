@@ -1,6 +1,6 @@
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import {Dialog, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 
 import {AppContext, SELECTIONS} from "../../App";
 import AppPage from "../../components/AppPage";
@@ -17,6 +17,7 @@ import ResultCard from "../../components/ResultCard";
 import {DotNetIcon, SpringIcon} from "../../components/FrameworkIcons";
 import {CSharpIcon, FSharpIcon, JavaIcon} from "../../components/LanguageIcons";
 import {JUnitIcon, NUnitIcon} from "../../components/TestingIcons";
+import IconFrame from "../../components/IconFrame";
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)
@@ -36,12 +37,10 @@ const BackendQuestionnaire = () => {
     const [frameworkDescription, setFrameworkDescription] = useState('')
     const [languageDescription, setLanguageDescription] = useState('')
     const [testingDescription, setTestingDescription] = useState('')
-
+    
     const generateResults = () => {
-        console.log(userInterestInMicrosoft)
-        console.log(userInterestInFunctional)
-        if (userInterestInMicrosoft === SELECTIONS.VERY_INTERESTED
-            && userInterestInFunctional === SELECTIONS.VERY_INTERESTED
+        if (userInterestInMicrosoft === '2'
+            && userInterestInFunctional === '2'
         ) {
             setFrameworkDescription('.NET')
             setFrameworkIcon(<DotNetIcon/>)
@@ -49,7 +48,7 @@ const BackendQuestionnaire = () => {
             setLanguageIcon(<FSharpIcon/>)
             setTestingDescription('NUnit')
             setTestingIcon(<NUnitIcon/>)
-        } else if (userInterestInMicrosoft === SELECTIONS.VERY_INTERESTED) {
+        } else if (userInterestInMicrosoft === '2') {
             setFrameworkDescription('.NET')
             setFrameworkIcon(<DotNetIcon/>)
             setLanguageDescription('C#')
@@ -145,7 +144,7 @@ const BackendQuestionnaire = () => {
                                     >
                                         Framework
                                     </Typography>
-                                    {frameworkIcon}
+                                    <IconFrame icon={frameworkIcon}/>
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
@@ -164,7 +163,7 @@ const BackendQuestionnaire = () => {
                                     >
                                         Language
                                     </Typography>
-                                    {languageIcon}
+                                    <IconFrame icon={languageIcon}/>
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
@@ -183,7 +182,7 @@ const BackendQuestionnaire = () => {
                                     >
                                         Testing
                                     </Typography>
-                                    {testingIcon}
+                                    <IconFrame icon={testingIcon}/>
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
