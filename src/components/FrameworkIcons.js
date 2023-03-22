@@ -26,6 +26,7 @@ export {
 		AndroidIcon,
 		AngularIcon,
 		DjangoIcon,
+		DotNetIcon,
 		EmbeddedCIcon,
 		FlaskIcon,
 		FlutterIcon,
