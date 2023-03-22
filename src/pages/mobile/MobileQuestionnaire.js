@@ -1,4 +1,4 @@
-import {useContext, useReducer} from "react";
+import {useContext} from "react";
 import {Typography} from "@mui/material";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
@@ -6,7 +6,7 @@ import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {AppContext} from "../../App";
 import AppPage from "../../components/AppPage";
 import AppLayout from "../../components/AppLayout";
-import {defaultMobileState, MOBILE_ACTIONS, mobileStateReducer} from "./MobileQuestionnaireState";
+import {MOBILE_ACTIONS} from "./MobileQuestionnaireState";
 import {
     SelectUserInterestInFunctional,
     SelectUserInterestInModernity,
@@ -20,7 +20,8 @@ import SubmitButton from "../../components/SubmitButton";
 const MobileQuestionnaire = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
-    const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState, undefined);
+    let mobileState = appContext.mobileState
+    let mobileDispatch = appContext.mobileDispatch
     
     const generateResults = (event) => {
         event.preventDefault()
@@ -47,7 +48,8 @@ const MobileQuestionnaire = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '1vh',
-                        justifyContent: 'center',
+                        height: '100%',
+                        justifyContent: 'flex-start',
                         paddingBottom: '1vh',
                         paddingTop: '1vh',
                         width: '75%'

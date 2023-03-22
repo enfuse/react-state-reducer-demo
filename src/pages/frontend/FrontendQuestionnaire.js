@@ -6,7 +6,7 @@ import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {AppContext} from "../../App";
 import AppLayout from "../../components/AppLayout";
 import AppPage from "../../components/AppPage";
-import {defaultFrontendState, FRONTEND_ACTIONS, frontendStateReducer} from "./FrontendQuestionnaireState";
+import {FRONTEND_ACTIONS} from "./FrontendQuestionnaireState";
 import {
   SelectUserExperienceWithFrontend,
   SelectUserInterestInFunctional,
@@ -15,12 +15,12 @@ import {
 } from "./FrontendRadioGroups"
 import SubmitButton from "../../components/SubmitButton";
 import ResultCard from "../../components/ResultCard";
-import IconFrame from "../../components/IconFrame";
 
 const FrontendQuestionnaire = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
-    const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState, undefined);
+    let frontendState = appContext.frontendState
+    let frontendDispatch = appContext.frontendDispatch
     
     const generateResults = (event) => {
         event.preventDefault()
