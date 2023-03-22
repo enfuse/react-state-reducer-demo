@@ -58,8 +58,8 @@ const calculateResultStatus = (state) => {
                 ...state.resultStatus,
                 frameworkDescription: state.userInterestInModernity === '0' ? 'Angular' : 'React',
                 frameworkIcon: state.userInterestInModernity === '0' ? <AngularIcon/> : <ReactIcon/>,
-                languageDescription: state.userInterestInFunctional === ('1'||'2') ? 'Javascript' : 'Typescript',
-                languageIcon: state.userInterestInFunctional === ('1'||'2') ? <JavaScriptIcon/> : <TypescriptIcon/>,
+                languageDescription: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2') ? 'Javascript' : 'Typescript',
+                languageIcon: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2') ? <JavaScriptIcon/> : <TypescriptIcon/>,
                 testingDescription: state.userInterestInModernity === '0' ? 'Jasmine' : 'Playwright',
                 testingIcon: state.userInterestInModernity === '0' ? <JasmineIcon/> : <PlaywrightIcon/>
             }
@@ -68,8 +68,8 @@ const calculateResultStatus = (state) => {
                 ...state.resultStatus,
                 frameworkDescription: state.userInterestInModernity === '2' ? 'NextJS' : 'React',
                 frameworkIcon: state.userInterestInModernity === '2' ? <NextJsIcon/> : <ReactIcon/>,
-                languageDescription: state.userInterestInFunctional === ('1'||'2') ? 'Javascript' : 'Typescript',
-                languageIcon: state.userInterestInFunctional === ('1'||'2') ? <JavaScriptIcon/> : <TypescriptIcon/>,
+                languageDescription: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2') ? 'Javascript' : 'Typescript',
+                languageIcon: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2') ? <JavaScriptIcon/> : <TypescriptIcon/>,
                 testingDescription: 'Playwright',
                 testingIcon: <PlaywrightIcon/>
             }
