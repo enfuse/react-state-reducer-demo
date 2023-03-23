@@ -43,17 +43,7 @@ const MobileQuestionnaire = () => {
         <>
             <AppLayout>
                 <AppPage>
-                    <div style={{
-                        alignItems: 'center',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1vh',
-                        height: '100%',
-                        justifyContent: 'flex-start',
-                        paddingBottom: '1vh',
-                        paddingTop: '1vh',
-                        width: '75%'
-                    }}>
+                    <div style={appContext.pageStyle}>
                         <div style={{
                             alignItems: 'center',
                             display: 'flex',

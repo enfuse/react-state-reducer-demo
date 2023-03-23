@@ -35,22 +35,15 @@ const HomePage = () => {
         <>
             <AppLayout>
                 <AppPage>
-                    <div style={{
-                        alignItems: 'center',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1vh',
-                        justifyContent: 'center',
-                        paddingBottom: '1vh',
-                        paddingTop: '1vh',
-                        width: '75%'
-                    }}>
+                    <div style={appContext.pageStyle}>
                         <Typography
                             color={appTheme.secondary}
                             fontFamily='-apple-system'
                             fontSize='2.5vh'
                             fontWeight='bold'
-                        >Home</Typography>
+                        >
+                            Home
+                        </Typography>
                         <Typography
                             color={appTheme.secondary}
                             fontFamily='-apple-system'

@@ -1,8 +1,11 @@
 import {useNavigate} from "react-router-dom";
 import {List, ListItem} from "@mui/material";
 import NavigationButton from "./NavigationButton";
+import {useContext} from "react";
+import {AppContext} from "../App";
 
 const NavigationList = () => {
+    let appContext = useContext(AppContext)
     let navigate = useNavigate()
 
     return (
@@ -39,6 +42,17 @@ const NavigationList = () => {
                     }}
                 />
             </ListItem>
+            {appContext.frontendState.pageContent === 'results'
+                && appContext.mobileState.pageContent === 'results'
+                && <ListItem>
+                    <NavigationButton
+                        buttonTitle='Summary'
+                        onClick={() => {
+                          navigate('/summary')
+                        }}
+                    />
+                </ListItem>
+            }
         </List>
     )
 }

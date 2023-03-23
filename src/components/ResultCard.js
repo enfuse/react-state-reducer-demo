@@ -4,8 +4,8 @@ import {Card} from "@mui/material";
 import {AppContext} from "../App";
 
 const ResultCard = ({children}) => {
-		let context = useContext(AppContext)
-		let appTheme = context.isDarkThemeActive ? context.darkTheme : context.lightTheme
+		let appContext = useContext(AppContext)
+		let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 	
 		return (
 				<Card elevation={10} sx={{
