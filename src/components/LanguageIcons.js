@@ -7,7 +7,7 @@ let iconSources = {
     goLang: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg',
     groovy: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/groovy/groovy-original.svg',
     java: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-    javaScript: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    javascript: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     kotlin: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
     nextJs: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg',
     nodeJs: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
@@ -31,7 +31,7 @@ const FSharpIcon = () => <img src={iconSources.fSharp} alt={'F#'} style={{height
 const GoLangIcon = () => <img src={iconSources.goLang} alt={'GoLang'} style={{height: '5vw', width: '5vw'}}/>
 const GroovyIcon = () => <img src={iconSources.groovy} alt={'Groovy'} style={{height: '5vw', width: '5vw'}}/>
 const JavaIcon = () => <img src={iconSources.java} alt={'Java'} style={{height: '5vw', width: '5vw'}}/>
-const JavaScriptIcon = () => <img src={iconSources.javaScript} alt={'JavaScript'} style={{height: '5vw', width: '5vw'}}/>
+const JavaScriptIcon = () => <img src={iconSources.javascript} alt={'JavaScript'} style={{height: '5vw', width: '5vw'}}/>
 const KotlinIcon = () => <img src={iconSources.kotlin} alt={'Kotlin'} style={{height: '5vw', width: '5vw'}}/>
 const NextJsIcon = () => <img src={iconSources.nextJs} alt={'NextJS'} style={{height: '5vw', width: '5vw'}}/>
 const NodeJsIcon = () => <img src={iconSources.nodeJs} alt={'NodeJS'} style={{height: '5vw', width: '5vw'}}/>

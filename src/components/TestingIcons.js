@@ -6,7 +6,7 @@ let iconSources = {
 	nunit: 'https://avatars.githubusercontent.com/u/2678858?s=280&v=4',
 	playwright: 'https://playwright.dev/img/playwright-logo.svg',
 	pytest: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-plain-wordmark.svg",
-	xctest: "https://w7.pngwing.com/pngs/951/722/png-transparent-computer-icons-xcode-ios-tool-s-apple-tool-png-transparent-images-tool.png",
+	xctest: "https://blog.scottlogic.com/cbrown/assets/xctest-logo.jpg"
 }
 
 const EspressoIcon = () => <img src={iconSources.espresso} alt='Espresso' style={{height: '5vw', width: '5vw'}}/>

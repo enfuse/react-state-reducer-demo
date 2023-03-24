@@ -7,6 +7,8 @@ import {
     pageStyle,
     pageBodyStyle,
     pageHeaderStyle,
+    resultStyle,
+    resultDescriptionStyle,
     resultItemStyle
 } from "./App.style";
 import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
@@ -46,6 +48,8 @@ export const AppContext = createContext({
     pageStyle: {},
     pageBodyStyle: {},
     pageHeaderStyle: {},
+    resultStyle: {},
+    resultDescriptionStyle: {},
     resultItemStyle: {}
 })
 
@@ -59,10 +63,13 @@ const App = () => {
         resultStatus: {
             frameworkDescription: '',
             frameworkIcon: <></>,
+            frameworkTitle: '',
             languageDescription: '',
             languageIcon: <></>,
+            languageTitle: '',
             testingDescription: '',
-            testingIcon: <></>
+            testingIcon: <></>,
+            testingTitle: ''
         },
         userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
         userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
@@ -77,10 +84,13 @@ const App = () => {
             resultStatus: {
                 frameworkDescription: '',
                 frameworkIcon: <></>,
+                frameworkTitle: '',
                 languageDescription: '',
                 languageIcon: <></>,
+                languageTitle: '',
                 testingDescription: '',
-                testingIcon: <></>
+                testingIcon: <></>,
+                testingTitle: ''
             },
             userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
             userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
@@ -118,6 +128,8 @@ const App = () => {
             pageStyle: pageStyle,
             pageBodyStyle: pageBodyStyle,
             pageHeaderStyle: pageHeaderStyle,
+            resultStyle: resultStyle,
+            resultDescriptionStyle: resultDescriptionStyle,
             resultItemStyle: resultItemStyle
         }}>
             <BrowserRouter>

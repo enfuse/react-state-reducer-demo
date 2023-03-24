@@ -10,7 +10,8 @@ import {FRONTEND_ACTIONS} from "./FrontendQuestionnaireState";
 import {
 	SelectUserExperienceWithFrontend,
 	SelectUserInterestInFunctional,
-	SelectUserInterestInModernity, SelectUserInterestInOpenSource,
+	SelectUserInterestInModernity,
+	SelectUserInterestInOpenSource,
 	SelectUserInterestInUpdates
 } from "./FrontendRadioGroups"
 import SubmitButton from "../../components/SubmitButton";
@@ -24,6 +25,8 @@ const FrontendQuestionnaire = () => {
 	let pageStyle = appContext.pageStyle
 	let pageBodyStyle = appContext.pageBodyStyle
 	let pageHeaderStyle = appContext.pageHeaderStyle
+	let resultStyle = appContext.resultStyle
+	let resultDescriptionStyle = appContext.resultDescriptionStyle
 	let resultItemStyle = appContext.resultItemStyle
 	
 	const generateResults = (event) => {
@@ -121,66 +124,105 @@ const FrontendQuestionnaire = () => {
 							</div>
 							: <div style={pageBodyStyle}>
 								<ResultCard>
-									<div style={resultItemStyle}>
-										<Typography
-											color={appTheme.secondary}
-											fontFamily='-apple-system'
-											fontSize='2vh'
-											fontWeight='bold'
-										>
-											Framework
-										</Typography>
-										{frontendState.resultStatus.frameworkIcon}
-										<Typography
-											color={appTheme.secondary}
-											fontFamily='-apple-system'
-											fontSize='2vh'
-											fontWeight='bold'
-										>
-											{frontendState.resultStatus.frameworkDescription}
-										</Typography>
+									<div style={resultStyle}>
+										<div style={resultItemStyle}>
+											<Typography
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='2vh'
+												fontWeight='bold'
+											>
+												Framework
+											</Typography>
+											{frontendState.resultStatus.frameworkIcon}
+											<Typography
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='2vh'
+												fontWeight='bold'
+											>
+												{frontendState.resultStatus.frameworkTitle}
+											</Typography>
+										</div>
+										<div style={resultDescriptionStyle}>
+											<Typography
+												align='center'
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='1.5vh'
+												fontWeight='normal'
+											>
+												{frontendState.resultStatus.frameworkDescription}
+											</Typography>
+										</div>
 									</div>
 								</ResultCard>
 								<ResultCard>
-									<div style={resultItemStyle}>
-										<Typography
-											color={appTheme.secondary}
-											fontFamily='-apple-system'
-											fontSize='2vh'
-											fontWeight='bold'
-										>
-											Language
-										</Typography>
-										{frontendState.resultStatus.languageIcon}
-										<Typography
-											color={appTheme.secondary}
-											fontFamily='-apple-system'
-											fontSize='2vh'
-											fontWeight='bold'
-										>
-											{frontendState.resultStatus.languageDescription}
-										</Typography>
+									<div style={resultStyle}>
+										<div style={resultItemStyle}>
+											<Typography
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='2vh'
+												fontWeight='bold'
+											>
+												Language
+											</Typography>
+											{frontendState.resultStatus.languageIcon}
+											<Typography
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='2vh'
+												fontWeight='bold'
+											>
+												{frontendState.resultStatus.languageTitle}
+											</Typography>
+										</div>
+										<div style={resultDescriptionStyle}>
+											<Typography
+												align='center'
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='1.5vh'
+												fontWeight='normal'
+											>
+												{frontendState.resultStatus.languageDescription}
+											</Typography>
+										</div>
 									</div>
 								</ResultCard>
 								<ResultCard>
-									<div style={resultItemStyle}>
-										<Typography
-											color={appTheme.secondary}
-											fontFamily='-apple-system'
-											fontSize='2vh'
-											fontWeight='bold'
-										>
-											Testing
-										</Typography>
-										{frontendState.resultStatus.testingIcon}
-										<Typography
-											color={appTheme.secondary}
-											fontFamily='-apple-system'
-											fontSize='2vh'
-											fontWeight='bold'
-										>
-											{frontendState.resultStatus.testingDescription}
-										</Typography>
+									<div style={resultStyle}>
+										<div style={resultItemStyle}>
+											<Typography
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='2vh'
+												fontWeight='bold'
+											>
+												Testing
+											</Typography>
+											{frontendState.resultStatus.testingIcon}
+											<Typography
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='2vh'
+												fontWeight='bold'
+											>
+												{frontendState.resultStatus.testingTitle}
+											</Typography>
+										</div>
+										<div style={resultDescriptionStyle}>
+											<Typography
+												align='center'
+												color={appTheme.secondary}
+												fontFamily='-apple-system'
+												fontSize='1.5vh'
+												fontWeight='normal'
+											>
+												{frontendState.resultStatus.testingDescription}
+											</Typography>
+										</div>
 									</div>
 								</ResultCard>
 							</div>

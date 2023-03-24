@@ -41,6 +41,23 @@ const pageHeaderStyle = {
 	width: '100%'
 }
 
+const resultStyle = {
+	alignItems: 'center',
+	display: 'flex',
+	flexDirection: 'row',
+	height: '100%',
+	justifyContent: 'space-evenly',
+	width: '100%'
+}
+
+const resultDescriptionStyle = {
+	display: 'flex',
+	flexDirection: 'column',
+	height: '75%',
+	justifyContent: 'center',
+	width: '75%'
+}
+
 const resultItemStyle = {
 	alignItems: 'center',
 	display: 'flex',
@@ -55,5 +72,7 @@ export {
 	pageStyle,
 	pageBodyStyle,
 	pageHeaderStyle,
+	resultStyle,
+	resultDescriptionStyle,
 	resultItemStyle
 }

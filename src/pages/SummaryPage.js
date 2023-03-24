@@ -72,7 +72,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{backendResults.frameworkDescription}
+											{backendResults.frameworkTitle}
 										</Typography>
 									</div>
 									<div style={resultItemStyle}>
@@ -91,7 +91,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{backendResults.languageDescription}
+											{backendResults.languageTitle}
 										</Typography>
 									</div>
 									<div style={resultItemStyle}>
@@ -110,7 +110,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{backendResults.testingDescription}
+											{backendResults.testingTitle}
 										</Typography>
 									</div>
 								</div>
@@ -140,7 +140,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{frontendResults.frameworkDescription}
+											{frontendResults.frameworkTitle}
 										</Typography>
 									</div>
 									<div style={resultItemStyle}>
@@ -159,7 +159,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{frontendResults.languageDescription}
+											{frontendResults.languageTitle}
 										</Typography>
 									</div>
 									<div style={resultItemStyle}>
@@ -178,7 +178,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{frontendResults.testingDescription}
+											{frontendResults.testingTitle}
 										</Typography>
 									</div>
 								</div>
@@ -208,7 +208,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{mobileResults.frameworkDescription}
+											{mobileResults.frameworkTitle}
 										</Typography>
 									</div>
 									<div style={resultItemStyle}>
@@ -227,7 +227,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{mobileResults.languageDescription}
+											{mobileResults.languageTitle}
 										</Typography>
 									</div>
 									<div style={resultItemStyle}>
@@ -246,7 +246,7 @@ const SummaryPage = () => {
 											fontSize='2vh'
 											fontWeight='bold'
 										>
-											{mobileResults.testingDescription}
+											{mobileResults.testingTitle}
 										</Typography>
 									</div>
 								</div>

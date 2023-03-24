@@ -21,7 +21,7 @@ const SelectUserExperienceWithFrontend = ({userExperienceWithFrontend, setUserEx
 				fontSize: radioLabelProps.fontSize,
 				fontWeight: 'bold',
 				'&.Mui-focused': {color: appTheme.secondary}
-			}}>How much experience do you have using the core frontend skill-set? (Javascript, CSS, & HTML)</FormLabel>
+			}}>How much experience do you have using the core frontend skill-set? (JavaScript, CSS, & HTML)</FormLabel>
 			<RadioGroup
 				aria-labelledby="experience-selection-label"
 				name="experience-selection"
