@@ -23,6 +23,9 @@ import IconFrame from "../../components/IconFrame";
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let pageStyle = appContext.pageStyle
+    let pageBodyStyle = appContext.pageBodyStyle
+    let pageHeaderStyle = appContext.pageHeaderStyle
     
     const [pageContent, setPageContent] = useState('quiz')
     const [userInterestInEmbedded, setUserInterestInEmbedded] = useState(SELECTIONS.NOT_INTERESTED)
@@ -120,16 +123,8 @@ const BackendQuestionnaire = () => {
         <>
             <AppLayout>
                 <AppPage>
-                    <div style={appContext.pageStyle}>
-                        <div style={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            paddingBottom: '2.5%',
-                            paddingTop: '2.5%',
-                            width: '100%'
-                        }}>
+                    <div style={pageStyle}>
+                        <div style={pageHeaderStyle}>
                             <Typography
                                 color={appTheme.secondary}
                                 fontFamily='-apple-system'
@@ -174,14 +169,7 @@ const BackendQuestionnaire = () => {
                                     setUserInterestInWebApps={setUserInterestInWebApps}
                                 />
                             </div>
-                            : <div style={{
-                                alignItems: 'center',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                height: '80%',
-                                justifyContent: 'center',
-                                width: '100%'
-                            }}>
+                            : <div style={pageBodyStyle}>
                                 <ResultCard>
                                     <Typography
                                         color={appTheme.secondary}

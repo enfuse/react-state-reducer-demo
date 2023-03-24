@@ -16,6 +16,8 @@ const SummaryPage = () => {
 		let frontendResults = appContext.frontendState.resultStatus
 		let mobileResults = appContext.mobileState.resultStatus
 		let pageStyle = appContext.pageStyle
+		let pageBodyStyle = appContext.pageBodyStyle
+		let pageHeaderStyle = appContext.pageHeaderStyle
 	
 		const resetPage = () => {
 				appContext.initializeResults()
@@ -27,15 +29,7 @@ const SummaryPage = () => {
 						<AppLayout>
 								<AppPage>
 										<div style={pageStyle}>
-												<div style={{
-														alignItems: 'center',
-														display: 'flex',
-														flexDirection: 'row',
-														justifyContent: 'space-between',
-														paddingBottom: '2.5%',
-														paddingTop: '2.5%',
-														width: '100%'
-												}}>
+												<div style={pageHeaderStyle}>
 														<Typography
 																color={appTheme.secondary}
 																fontFamily='-apple-system'
@@ -51,14 +45,7 @@ const SummaryPage = () => {
 																onClick={resetPage}
 														/>
 												</div>
-												<div style={{
-														alignItems: 'center',
-														display: 'flex',
-														flexDirection: 'column',
-														height: '80%',
-														justifyContent: 'center',
-														width: '100%'
-												}}>
+												<div style={pageBodyStyle}>
 														<ResultCard>
 																<div style={{
 																		alignContent: 'center',

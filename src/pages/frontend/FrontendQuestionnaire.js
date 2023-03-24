@@ -21,6 +21,9 @@ const FrontendQuestionnaire = () => {
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
     let frontendState = appContext.frontendState
     let frontendDispatch = appContext.frontendDispatch
+    let pageStyle = appContext.pageStyle
+    let pageBodyStyle = appContext.pageBodyStyle
+    let pageHeaderStyle = appContext.pageHeaderStyle
     
     const generateResults = (event) => {
         event.preventDefault()
@@ -42,16 +45,8 @@ const FrontendQuestionnaire = () => {
         <>
             <AppLayout>
                 <AppPage>
-                    <div style={appContext.pageStyle}>
-                        <div style={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            paddingBottom: '2.5%',
-                            paddingTop: '2.5%',
-                            width: '100%'
-                        }}>
+                    <div style={pageStyle}>
+                        <div style={pageHeaderStyle}>
                             <Typography
                                 color={appTheme.secondary}
                                 fontFamily='-apple-system'
@@ -123,14 +118,7 @@ const FrontendQuestionnaire = () => {
                                     }}
                                 />
                             </div>
-                            : <div style={{
-                                alignItems: 'center',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                height: '80%',
-                                justifyContent: 'flex-start',
-                                width: '100%'
-                            }}>
+                            : <div style={pageBodyStyle}>
                                 <ResultCard>
                                     <Typography
                                         color={appTheme.secondary}

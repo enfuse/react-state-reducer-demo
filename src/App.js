@@ -1,5 +1,5 @@
 import {createContext, useEffect, useReducer, useState} from "react";
-import {BrowserRouter, Navigate, Route, Routes, useNavigate} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
 import FrontendQuestionnaire from "./pages/frontend/FrontendQuestionnaire";
@@ -29,7 +29,9 @@ export const AppContext = createContext({
     frontendDispatch: () => {},
     mobileState: {},
     mobileDispatch: () => {},
-    pageStyle: {}
+    pageStyle: {},
+    pageBodyStyle: {},
+    pageHeaderStyle: {}
 })
 
 const App = () => {
@@ -81,6 +83,23 @@ const App = () => {
                 paddingBottom: '1vh',
                 paddingTop: '1vh',
                 width: '75%'
+            },
+            pageBodyStyle: {
+                alignItems: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '80%',
+                justifyContent: 'center',
+                width: '100%'
+            },
+            pageHeaderStyle: {
+                alignItems: 'center',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingBottom: '2.5%',
+                paddingTop: '2.5%',
+                width: '100%'
             }
         }}>
             <BrowserRouter>
