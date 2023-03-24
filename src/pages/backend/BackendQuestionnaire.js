@@ -1,9 +1,9 @@
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {Typography} from "@mui/material";
 
-import {AppContext, SELECTIONS} from "../../App";
+import {AppContext} from "../../App";
 import AppPage from "../../components/AppPage";
 import AppLayout from "../../components/AppLayout";
 import {
@@ -18,105 +18,131 @@ import ResultCard from "../../components/ResultCard";
 import {DotNetIcon, FlaskIcon, KtorIcon, SpringIcon} from "../../components/FrameworkIcons";
 import {CSharpIcon, FSharpIcon, JavaIcon, KotlinIcon, PythonIcon} from "../../components/LanguageIcons";
 import {JUnitIcon, NUnitIcon, PyTestIcon} from "../../components/TestingIcons";
-import IconFrame from "../../components/IconFrame";
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)
     let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let backendState = appContext.backendState
+    let setBackendState = appContext.setBackendState
     let pageStyle = appContext.pageStyle
     let pageBodyStyle = appContext.pageBodyStyle
     let pageHeaderStyle = appContext.pageHeaderStyle
     
-    const [pageContent, setPageContent] = useState('quiz')
-    const [userInterestInEmbedded, setUserInterestInEmbedded] = useState(SELECTIONS.NOT_INTERESTED)
-    const [userInterestInFunctional, setUserInterestInFunctional] = useState(SELECTIONS.NOT_INTERESTED)
-    const [userInterestInMicrosoft, setUserInterestInMicrosoft] = useState(SELECTIONS.NOT_INTERESTED)
-    const [userInterestInModernity, setUserInterestInModernity] = useState(SELECTIONS.NOT_INTERESTED)
-    const [userInterestInWebApps, setUserInterestInWebApps] = useState(SELECTIONS.NOT_INTERESTED)
-    
-    const [frameworkIcon, setFrameworkIcon] = useState(<></>)
-    const [languageIcon, setLanguageIcon] = useState(<></>)
-    const [testingIcon, setTestingIcon] = useState(<></>)
-    
-    const [frameworkDescription, setFrameworkDescription] = useState('')
-    const [languageDescription, setLanguageDescription] = useState('')
-    const [testingDescription, setTestingDescription] = useState('')
     
     const generateResults = (event) => {
         event.preventDefault()
-        if (userInterestInMicrosoft === '2'
-            && userInterestInFunctional === '2'
+        if (backendState.userInterestInMicrosoft === '2'
+            && backendState.userInterestInFunctional === '2'
         ) {
-            setFrameworkDescription('.NET')
-            setFrameworkIcon(<DotNetIcon/>)
-            setLanguageDescription('F#')
-            setLanguageIcon(<FSharpIcon/>)
-            setTestingDescription('NUnit')
-            setTestingIcon(<NUnitIcon/>)
-        } else if (userInterestInMicrosoft === '2'
-          && (userInterestInFunctional === '1' || userInterestInFunctional === '0')
+            setBackendState({
+                ...backendState,
+                pageContent: 'results',
+                resultStatus: {
+                    frameworkDescription: '.NET',
+                    frameworkIcon: <DotNetIcon/>,
+                    languageDescription: 'F#',
+                    languageIcon: <FSharpIcon/>,
+                    testingDescription: 'NUnit',
+                    testingIcon: <NUnitIcon/>
+                }
+            })
+        } else if (backendState.userInterestInMicrosoft === '2'
+            && (backendState.userInterestInFunctional === '1' || backendState.userInterestInFunctional === '0')
         ) {
-            setFrameworkDescription('.NET')
-            setFrameworkIcon(<DotNetIcon/>)
-            setLanguageDescription('C#')
-            setLanguageIcon(<CSharpIcon/>)
-            setTestingDescription('NUnit')
-            setTestingIcon(<NUnitIcon/>)
-        } else if ((userInterestInMicrosoft === '0' || userInterestInMicrosoft === '1')
-            && (userInterestInWebApps === '1' || userInterestInWebApps === '2')
-            && ((userInterestInFunctional === '0' || userInterestInFunctional === '1')
-                || userInterestInModernity === '0'
+            setBackendState({
+                ...backendState,
+                pageContent: 'results',
+                resultStatus: {
+                    frameworkDescription: '.NET',
+                    frameworkIcon: <DotNetIcon/>,
+                    languageDescription: 'C#',
+                    languageIcon: <CSharpIcon/>,
+                    testingDescription: 'NUnit',
+                    testingIcon: <NUnitIcon/>
+                }
+            })
+        } else if ((backendState.userInterestInMicrosoft === '0' || backendState.userInterestInMicrosoft === '1')
+            && (backendState.userInterestInWebApps === '1' || backendState.userInterestInWebApps === '2')
+            && ((backendState.userInterestInFunctional === '0' || backendState.userInterestInFunctional === '1')
+                || backendState.userInterestInModernity === '0'
             )
         ) {
-            setFrameworkDescription('Spring')
-            setFrameworkIcon(<SpringIcon/>)
-            setLanguageDescription('Java')
-            setLanguageIcon(<JavaIcon/>)
-            setTestingDescription('JUnit')
-            setTestingIcon(<JUnitIcon/>)
-        } else if ((userInterestInMicrosoft === '0' || userInterestInMicrosoft === '1')
-          && (userInterestInWebApps === '1' || userInterestInWebApps === '2')
-          && (userInterestInFunctional === '1' || userInterestInFunctional === '2')
-          && (userInterestInModernity === '1')
+            setBackendState({
+                ...backendState,
+                pageContent: 'results',
+                resultStatus: {
+                    frameworkDescription: 'Spring',
+                    frameworkIcon: <SpringIcon/>,
+                    languageDescription: 'Java',
+                    languageIcon: <JavaIcon/>,
+                    testingDescription: 'JUnit',
+                    testingIcon: <JUnitIcon/>
+                }
+            })
+        } else if ((backendState.userInterestInMicrosoft === '0' || backendState.userInterestInMicrosoft === '1')
+            && (backendState.userInterestInWebApps === '1' || backendState.userInterestInWebApps === '2')
+            && (backendState.userInterestInFunctional === '1' || backendState.userInterestInFunctional === '2')
+            && (backendState.userInterestInModernity === '1')
         ) {
-            setFrameworkDescription('Spring')
-            setFrameworkIcon(<SpringIcon/>)
-            setLanguageDescription('Kotlin')
-            setLanguageIcon(<KotlinIcon/>)
-            setTestingDescription('JUnit')
-            setTestingIcon(<JUnitIcon/>)
-        } else if ((userInterestInMicrosoft === '0' || userInterestInMicrosoft === '1')
-          && (userInterestInWebApps === '1' || userInterestInWebApps === '2')
-          && (userInterestInFunctional === '1' || userInterestInFunctional === '2')
-          && (userInterestInModernity === '2')
+            setBackendState({
+                ...backendState,
+                pageContent: 'results',
+                resultStatus: {
+                    frameworkDescription: 'Spring',
+                    frameworkIcon: <SpringIcon/>,
+                    languageDescription: 'Kotlin',
+                    languageIcon: <KotlinIcon/>,
+                    testingDescription: 'JUnit',
+                    testingIcon: <JUnitIcon/>
+                }
+            })
+        } else if ((backendState.userInterestInMicrosoft === '0' || backendState.userInterestInMicrosoft === '1')
+            && (backendState.userInterestInWebApps === '1' || backendState.userInterestInWebApps === '2')
+            && (backendState.userInterestInFunctional === '1' || backendState.userInterestInFunctional === '2')
+            && (backendState.userInterestInModernity === '2')
         ) {
-            setFrameworkDescription('Ktor')
-            setFrameworkIcon(<KtorIcon/>)
-            setLanguageDescription('Kotlin')
-            setLanguageIcon(<KotlinIcon/>)
-            setTestingDescription('Kotlin Test')
-            setTestingIcon(<KotlinIcon/>)
+            setBackendState({
+                ...backendState,
+                pageContent: 'results',
+                resultStatus: {
+                    frameworkDescription: 'Ktor',
+                    frameworkIcon: <KtorIcon/>,
+                    languageDescription: 'Kotlin',
+                    languageIcon: <KotlinIcon/>,
+                    testingDescription: 'Kotlin Test',
+                    testingIcon: <KotlinIcon/>
+                }
+            })
         } else {
-            setFrameworkDescription('Flask')
-            setFrameworkIcon(<FlaskIcon/>)
-            setLanguageDescription('Python')
-            setLanguageIcon(<PythonIcon/>)
-            setTestingDescription('pytest')
-            setTestingIcon(<PyTestIcon/>)
+            setBackendState({
+                ...backendState,
+                pageContent: 'results',
+                resultStatus: {
+                    frameworkDescription: 'Flask',
+                    frameworkIcon: <FlaskIcon/>,
+                    languageDescription: 'Python',
+                    languageIcon: <PythonIcon/>,
+                    testingDescription: 'pytest',
+                    testingIcon: <PyTestIcon/>
+                }
+            })
         }
-    
-        setPageContent('results')
     }
     
     const resetPage = (event) => {
         event.preventDefault()
-        setFrameworkDescription('')
-        setFrameworkIcon(<></>)
-        setLanguageDescription('')
-        setLanguageIcon(<></>)
-        setTestingDescription('')
-        setTestingIcon(<></>)
-        setPageContent('quiz')
+        setBackendState({
+            ...backendState,
+            pageContent: 'quiz',
+            resultStatus: {
+                frameworkDescription: '',
+                frameworkIcon: <></>,
+                languageDescription: '',
+                languageIcon: <></>,
+                testingDescription: '',
+                testingIcon: <></>
+            }
+        })
     }
 
     return (
@@ -131,7 +157,7 @@ const BackendQuestionnaire = () => {
                                 fontSize='2.5vh'
                                 fontWeight='bold'
                             >Backend</Typography>
-                            {pageContent === 'quiz'
+                            {backendState.pageContent === 'quiz'
                                 ? <SubmitButton
                                     buttonIcon={<TaskAltIcon/>}
                                     buttonLabel='Submit'
@@ -141,32 +167,57 @@ const BackendQuestionnaire = () => {
                                 : <SubmitButton
                                     buttonIcon={<RestartAltIcon/>}
                                     buttonLabel={'Try Again'}
-                                    isDisabled={pageContent === 'quiz'}
+                                    isDisabled={backendState.pageContent === 'quiz'}
                                     onClick={resetPage}
                                 />
                             }
                         </div>
-                        {pageContent === 'quiz'
+                        {backendState.pageContent === 'quiz'
                             ? <div>
                                 <SelectUserInterestInEmbedded
-                                    userInterestInEmbedded={userInterestInEmbedded}
-                                    setUserInterestInEmbedded={setUserInterestInEmbedded}
+                                    userInterestInEmbedded={backendState.userInterestInEmbedded}
+                                    setUserInterestInEmbedded={(newState) => {
+                                        setBackendState({
+                                            ...backendState,
+                                            userInterestInEmbedded: newState
+                                        })
+                                    }}
                                 />
                                 <SelectUserInterestInFunctional
-                                    userInterestInFunctional={userInterestInFunctional}
-                                    setUserInterestInFunctional={setUserInterestInFunctional}
+                                    userInterestInFunctional={backendState.userInterestInFunctional}
+                                    setUserInterestInFunctional={(newState) => {
+                                        setBackendState({
+                                            ...backendState,
+                                            userInterestInFunctional: newState
+                                        })
+                                    }}
                                 />
                                 <SelectUserInterestInMicrosoft
-                                    userInterestInMicrosoft={userInterestInMicrosoft}
-                                    setUserInterestInMicrosoft={setUserInterestInMicrosoft}
+                                    userInterestInMicrosoft={backendState.userInterestInMicrosoft}
+                                    setUserInterestInMicrosoft={(newState) => {
+                                        setBackendState({
+                                            ...backendState,
+                                            userInterestInMicrosoft: newState
+                                        })
+                                    }}
                                 />
                                 <SelectUserInterestInModernity
-                                    userInterestInModernity={userInterestInModernity}
-                                    setUserInterestInModernity={setUserInterestInModernity}
+                                    userInterestInModernity={backendState.userInterestInModernity}
+                                    setUserInterestInModernity={(newState) => {
+                                        setBackendState({
+                                            ...backendState,
+                                            userInterestInModernity: newState
+                                        })
+                                    }}
                                 />
                                 <SelectUserInterestInWebApps
-                                    userInterestInWebApps={userInterestInWebApps}
-                                    setUserInterestInWebApps={setUserInterestInWebApps}
+                                    userInterestInWebApps={backendState.userInterestInWebApps}
+                                    setUserInterestInWebApps={(newState) => {
+                                        setBackendState({
+                                            ...backendState,
+                                            userInterestInWebApps: newState
+                                        })
+                                    }}
                                 />
                             </div>
                             : <div style={pageBodyStyle}>
@@ -179,14 +230,14 @@ const BackendQuestionnaire = () => {
                                     >
                                         Framework
                                     </Typography>
-                                    <IconFrame icon={frameworkIcon}/>
+                                    {backendState.resultStatus.frameworkIcon}
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
                                         fontSize='2vh'
                                         fontWeight='bold'
                                     >
-                                        {frameworkDescription}
+                                        {backendState.resultStatus.frameworkDescription}
                                     </Typography>
                                 </ResultCard>
                                 <ResultCard>
@@ -198,14 +249,14 @@ const BackendQuestionnaire = () => {
                                     >
                                         Language
                                     </Typography>
-                                    <IconFrame icon={languageIcon}/>
+                                    {backendState.resultStatus.languageIcon}
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
                                         fontSize='2vh'
                                         fontWeight='bold'
                                     >
-                                        {languageDescription}
+                                        {backendState.resultStatus.languageDescription}
                                     </Typography>
                                 </ResultCard>
                                 <ResultCard>
@@ -217,14 +268,14 @@ const BackendQuestionnaire = () => {
                                     >
                                         Testing
                                     </Typography>
-                                    <IconFrame icon={testingIcon}/>
+                                    {backendState.resultStatus.testingIcon}
                                     <Typography
                                         color={appTheme.secondary}
                                         fontFamily='-apple-system'
                                         fontSize='2vh'
                                         fontWeight='bold'
                                     >
-                                        <div>{testingDescription}</div>
+                                        {backendState.resultStatus.testingDescription}
                                     </Typography>
                                 </ResultCard>
                             </div>

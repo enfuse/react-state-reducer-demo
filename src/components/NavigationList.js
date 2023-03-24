@@ -42,13 +42,14 @@ const NavigationList = () => {
                     }}
                 />
             </ListItem>
-            {appContext.frontendState.pageContent === 'results'
+            {appContext.backendState.pageContent === 'results'
+                && appContext.frontendState.pageContent === 'results'
                 && appContext.mobileState.pageContent === 'results'
                 && <ListItem>
                     <NavigationButton
                         buttonTitle='Summary'
                         onClick={() => {
-                          navigate('/summary')
+                            navigate('/summary')
                         }}
                     />
                 </ListItem>

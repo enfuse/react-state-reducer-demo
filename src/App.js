@@ -3,11 +3,7 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
 import FrontendQuestionnaire from "./pages/frontend/FrontendQuestionnaire";
-import {
-  defaultFrontendState,
-  FRONTEND_ACTIONS,
-  frontendStateReducer
-} from "./pages/frontend/FrontendQuestionnaireState";
+import {defaultFrontendState, FRONTEND_ACTIONS, frontendStateReducer} from "./pages/frontend/FrontendQuestionnaireState";
 import HomePage from "./pages/HomePage";
 import MobileQuestionnaire from "./pages/mobile/MobileQuestionnaire";
 import {defaultMobileState, MOBILE_ACTIONS, mobileStateReducer} from "./pages/mobile/MobileQuestionnaireState";
@@ -25,6 +21,7 @@ export const AppContext = createContext({
     setIsDarkThemeActive: (newState) => {},
     darkTheme: {},
     lightTheme: {},
+    backendState: {},
     frontendState: {},
     frontendDispatch: () => {},
     mobileState: {},
@@ -39,7 +36,40 @@ const App = () => {
     const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState, undefined)
     const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState, undefined)
   
+    const [backendState, setBackendState] = useState({
+        pageContent: 'quiz',
+        resultStatus: {
+            frameworkDescription: '',
+            frameworkIcon: <></>,
+            languageDescription: '',
+            languageIcon: <></>,
+            testingDescription: '',
+            testingIcon: <></>
+        },
+        userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
+        userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
+        userInterestInMicrosoft: SELECTIONS.NOT_INTERESTED,
+        userInterestInModernity: SELECTIONS.NOT_INTERESTED,
+        userInterestInWebApps: SELECTIONS.NOT_INTERESTED
+    })
+  
     const initializeResults = () => {
+        setBackendState({
+            pageContent: 'quiz',
+            resultStatus: {
+              frameworkDescription: '',
+              frameworkIcon: <></>,
+              languageDescription: '',
+              languageIcon: <></>,
+              testingDescription: '',
+              testingIcon: <></>
+            },
+            userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
+            userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
+            userInterestInMicrosoft: SELECTIONS.NOT_INTERESTED,
+            userInterestInModernity: SELECTIONS.NOT_INTERESTED,
+            userInterestInWebApps: SELECTIONS.NOT_INTERESTED
+        })
         frontendDispatch({
             type: FRONTEND_ACTIONS.RESET_PAGE,
             value: 'Initialize Results'
@@ -69,6 +99,8 @@ const App = () => {
                 secondary: '#253D5B', // Prussian Blue
                 tertiary: '#3E92CC', // Celestial Blue
             },
+            backendState: backendState,
+            setBackendState: setBackendState,
             frontendState: frontendState,
             frontendDispatch: frontendDispatch,
             mobileState: mobileState,
@@ -109,7 +141,7 @@ const App = () => {
                     <Route path='/frontend' element={<FrontendQuestionnaire/>}/>
                     <Route path='/home' element={<HomePage/>}/>
                     <Route path='/mobile' element={<MobileQuestionnaire/>}/>
-                    {(frontendState.pageContent === 'results' && mobileState.pageContent === 'results')
+                    {(backendState.pageContent === 'results' && frontendState.pageContent === 'results' && mobileState.pageContent === 'results')
                         ? <Route path='/summary' element={<SummaryPage/>}/>
                         : <Route path='/summary' element={<Navigate to='/home'/>}/>
                     }

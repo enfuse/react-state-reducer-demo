@@ -12,7 +12,7 @@ const AppLayout = ({children}) => {
 
     return (
         <>
-            <Box sx={{display: 'flex', height: '100vh', width: '100vw'}}>
+            <Box sx={{display: 'flex', height: '97.5vh', width: '97.5vw'}}>
                 <Paper variant='outlined' square sx={{
                     alignItems: 'center',
                     backgroundColor: appTheme.primary,
