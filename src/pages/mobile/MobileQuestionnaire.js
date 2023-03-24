@@ -54,10 +54,10 @@ const MobileQuestionnaire = () => {
                             width: '100%'
                         }}>
                             <Typography
-                                  color={appTheme.secondary}
-                                  fontFamily='-apple-system'
-                                  fontSize='2.5vh'
-                                  fontWeight='bold'
+                                color={appTheme.secondary}
+                                fontFamily='-apple-system'
+                                fontSize='2.5vh'
+                                fontWeight='bold'
                             >
                                 Mobile
                             </Typography>

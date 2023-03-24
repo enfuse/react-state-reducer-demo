@@ -4,7 +4,7 @@ const SubmitButton = ({buttonIcon, buttonLabel, isDisabled, onClick}) => {
     return (
         <Button
             endIcon={buttonIcon}
-            isDisabled={isDisabled}
+            disabled={isDisabled}
             onClick={onClick}
             variant='outlined'
         >{buttonLabel}</Button>

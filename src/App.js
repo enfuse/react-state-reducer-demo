@@ -17,7 +17,7 @@ export const SELECTIONS = Object.freeze({
 
 export const AppContext = createContext({
     isDarkThemeActive: false,
-    setIsDarkThemeActive: () => {},
+    setIsDarkThemeActive: (newState) => {},
     darkTheme: {},
     lightTheme: {},
     frontendState: {},
@@ -31,7 +31,7 @@ const App = () => {
     const [isDarkThemeActive, setIsDarkThemeActive] = useState(false)
     const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState, undefined)
     const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState, undefined)
-
+  
     return (
         <AppContext.Provider value={{
             isDarkThemeActive: isDarkThemeActive,
@@ -69,9 +69,7 @@ const App = () => {
                     <Route path='/frontend' element={<FrontendQuestionnaire/>}/>
                     <Route path='/home' element={<HomePage/>}/>
                     <Route path='/mobile' element={<MobileQuestionnaire/>}/>
-                    {frontendState.pageContent === 'results' && mobileState.pageContent === 'results' &&
-                        <Route path='/summary' element={<SummaryPage/>}/>
-                    }
+                    <Route path='/summary' element={<SummaryPage/>}/>
                 </Routes>
             </BrowserRouter>
         </AppContext.Provider>
