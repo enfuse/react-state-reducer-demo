@@ -5,7 +5,7 @@ import {AppContext} from "../App";
 
 const AppPage = ({children}) => {
     let appContext = useContext(AppContext)
-    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 
     return (
         <Card elevation={5} sx={{

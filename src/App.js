@@ -1,12 +1,28 @@
 import {createContext, useEffect, useReducer, useState} from "react";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
+import {
+    appThemeDark,
+    appThemeLight,
+    pageStyle,
+    pageBodyStyle,
+    pageHeaderStyle,
+    resultItemStyle
+} from "./App.style";
 import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
 import FrontendQuestionnaire from "./pages/frontend/FrontendQuestionnaire";
-import {defaultFrontendState, FRONTEND_ACTIONS, frontendStateReducer} from "./pages/frontend/FrontendQuestionnaireState";
+import {
+    defaultFrontendState,
+    FRONTEND_ACTIONS,
+    frontendStateReducer
+} from "./pages/frontend/FrontendQuestionnaireState";
 import HomePage from "./pages/HomePage";
 import MobileQuestionnaire from "./pages/mobile/MobileQuestionnaire";
-import {defaultMobileState, MOBILE_ACTIONS, mobileStateReducer} from "./pages/mobile/MobileQuestionnaireState";
+import {
+    defaultMobileState,
+    MOBILE_ACTIONS,
+    mobileStateReducer
+} from "./pages/mobile/MobileQuestionnaireState";
 import SummaryPage from "./pages/SummaryPage";
 
 export const SELECTIONS = Object.freeze({
@@ -16,19 +32,21 @@ export const SELECTIONS = Object.freeze({
 })
 
 export const AppContext = createContext({
+    appThemeDark: {},
+    appThemeLight: {},
+    backendState: {},
+    setBackendState: (newState) => {},
+    frontendState: {},
+    frontendDispatch: () => {},
     initializeResults: () => {},
     isDarkThemeActive: false,
     setIsDarkThemeActive: (newState) => {},
-    darkTheme: {},
-    lightTheme: {},
-    backendState: {},
-    frontendState: {},
-    frontendDispatch: () => {},
     mobileState: {},
     mobileDispatch: () => {},
     pageStyle: {},
     pageBodyStyle: {},
-    pageHeaderStyle: {}
+    pageHeaderStyle: {},
+    resultItemStyle: {}
 })
 
 const App = () => {
@@ -57,12 +75,12 @@ const App = () => {
         setBackendState({
             pageContent: 'quiz',
             resultStatus: {
-              frameworkDescription: '',
-              frameworkIcon: <></>,
-              languageDescription: '',
-              languageIcon: <></>,
-              testingDescription: '',
-              testingIcon: <></>
+                frameworkDescription: '',
+                frameworkIcon: <></>,
+                languageDescription: '',
+                languageIcon: <></>,
+                testingDescription: '',
+                testingIcon: <></>
             },
             userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
             userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
@@ -89,50 +107,18 @@ const App = () => {
             initializeResults: initializeResults,
             isDarkThemeActive: isDarkThemeActive,
             setIsDarkThemeActive: setIsDarkThemeActive,
-            darkTheme: {
-                primary: '#253D5B', // Prussian Blue
-                secondary: '#EEF8FF', // Alice Blue
-                tertiary: '#3E92CC', // Celestial Blue
-            },
-            lightTheme: {
-                primary: '#EEF8FF', // Alice Blue
-                secondary: '#253D5B', // Prussian Blue
-                tertiary: '#3E92CC', // Celestial Blue
-            },
+            appThemeDark: appThemeDark,
+            appThemeLight: appThemeLight,
             backendState: backendState,
             setBackendState: setBackendState,
             frontendState: frontendState,
             frontendDispatch: frontendDispatch,
             mobileState: mobileState,
             mobileDispatch: mobileDispatch,
-            pageStyle: {
-                alignItems: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1vh',
-                height: '100%',
-                justifyContent: 'flex-start',
-                paddingBottom: '1vh',
-                paddingTop: '1vh',
-                width: '75%'
-            },
-            pageBodyStyle: {
-                alignItems: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '80%',
-                justifyContent: 'center',
-                width: '100%'
-            },
-            pageHeaderStyle: {
-                alignItems: 'center',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                paddingBottom: '2.5%',
-                paddingTop: '2.5%',
-                width: '100%'
-            }
+            pageStyle: pageStyle,
+            pageBodyStyle: pageBodyStyle,
+            pageHeaderStyle: pageHeaderStyle,
+            resultItemStyle: resultItemStyle
         }}>
             <BrowserRouter>
                 <Routes>

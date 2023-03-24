@@ -8,7 +8,7 @@ import NavigationList from "./NavigationList";
 
 const AppLayout = ({children}) => {
     let appContext = useContext(AppContext)
-    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 
     return (
         <>

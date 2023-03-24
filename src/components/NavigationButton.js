@@ -4,7 +4,7 @@ import {ListItemButton, ListItemText} from "@mui/material";
 
 const NavigationButton = ({buttonTitle, onClick}) => {
     let appContext = useContext(AppContext)
-    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 
     return (
         <ListItemButton

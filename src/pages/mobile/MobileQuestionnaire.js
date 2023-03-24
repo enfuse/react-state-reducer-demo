@@ -19,12 +19,13 @@ import SubmitButton from "../../components/SubmitButton";
 
 const MobileQuestionnaire = () => {
     let appContext = useContext(AppContext)
-    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
     let mobileState = appContext.mobileState
     let mobileDispatch = appContext.mobileDispatch
     let pageStyle = appContext.pageStyle
     let pageBodyStyle = appContext.pageBodyStyle
     let pageHeaderStyle = appContext.pageHeaderStyle
+    let resultItemStyle = appContext.resultItemStyle
     
     const generateResults = (event) => {
         event.preventDefault()
@@ -121,61 +122,67 @@ const MobileQuestionnaire = () => {
                             </div>
                             : <div style={pageBodyStyle}>
                                 <ResultCard>
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        Framework
-                                    </Typography>
-                                    {mobileState.resultStatus.frameworkIcon}
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        {mobileState.resultStatus.frameworkDescription}
-                                    </Typography>
+                                    <div style={resultItemStyle}>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            Framework
+                                        </Typography>
+                                        {mobileState.resultStatus.frameworkIcon}
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            {mobileState.resultStatus.frameworkDescription}
+                                        </Typography>
+                                    </div>
                                 </ResultCard>
                                 <ResultCard>
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        Language
-                                    </Typography>
+                                    <div style={resultItemStyle}>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            Language
+                                        </Typography>
                                         {mobileState.resultStatus.languageIcon}
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        {mobileState.resultStatus.languageDescription}
-                                    </Typography>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            {mobileState.resultStatus.languageDescription}
+                                        </Typography>
+                                    </div>
                                 </ResultCard>
                                 <ResultCard>
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        Testing
-                                    </Typography>
-                                    {mobileState.resultStatus.testingIcon}
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        {mobileState.resultStatus.testingDescription}
-                                    </Typography>
+                                    <div style={resultItemStyle}>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            Testing
+                                        </Typography>
+                                        {mobileState.resultStatus.testingIcon}
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            {mobileState.resultStatus.testingDescription}
+                                        </Typography>
+                                    </div>
                                 </ResultCard>
                           </div>
                         }

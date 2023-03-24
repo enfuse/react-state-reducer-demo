@@ -5,7 +5,7 @@ import {EXPERIENCE} from "./FrontendQuestionnaireState";
 
 const SelectUserExperienceWithFrontend = ({userExperienceWithFrontend, setUserExperienceWithFrontend}) => {
 	let appContext = useContext(AppContext)
-	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+	let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 	let radioLabelProps = {
 		color: appTheme.secondary,
 		fontFamily: '-apple-system',
@@ -69,7 +69,7 @@ const SelectUserExperienceWithFrontend = ({userExperienceWithFrontend, setUserEx
 
 const SelectUserInterestInFunctional = ({userInterestInFunctional, setUserInterestInFunctional}) => {
 	let appContext = useContext(AppContext)
-	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+	let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 	let radioLabelProps = {
 		color: appTheme.secondary,
 		fontFamily: '-apple-system',
@@ -133,7 +133,7 @@ const SelectUserInterestInFunctional = ({userInterestInFunctional, setUserIntere
 
 const SelectUserInterestInModernity = ({userInterestInModernity, setUserInterestInModernity}) => {
 	let appContext = useContext(AppContext)
-	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+	let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 	let radioLabelProps = {
 		color: appTheme.secondary,
 		fontFamily: '-apple-system',
@@ -197,7 +197,7 @@ const SelectUserInterestInModernity = ({userInterestInModernity, setUserInterest
 
 const SelectUserInterestInOpenSource = ({userInterestInOpenSource, setUserInterestInOpenSource}) => {
 	let appContext = useContext(AppContext)
-	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+	let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 	let radioLabelProps = {
 		color: appTheme.secondary,
 		fontFamily: '-apple-system',
@@ -261,7 +261,7 @@ const SelectUserInterestInOpenSource = ({userInterestInOpenSource, setUserIntere
 
 const SelectUserInterestInUpdates = ({userInterestInUpdates, setUserInterestInUpdates}) => {
 	let appContext = useContext(AppContext)
-	let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+	let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
 	let radioLabelProps = {
 		color: appTheme.secondary,
 		fontFamily: '-apple-system',

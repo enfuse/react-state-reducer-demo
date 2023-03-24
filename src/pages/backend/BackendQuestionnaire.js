@@ -21,13 +21,13 @@ import {JUnitIcon, NUnitIcon, PyTestIcon} from "../../components/TestingIcons";
 
 const BackendQuestionnaire = () => {
     let appContext = useContext(AppContext)
-    let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
+    let appTheme = appContext.isDarkThemeActive ? appContext.appThemeDark : appContext.appThemeLight
     let backendState = appContext.backendState
     let setBackendState = appContext.setBackendState
     let pageStyle = appContext.pageStyle
     let pageBodyStyle = appContext.pageBodyStyle
     let pageHeaderStyle = appContext.pageHeaderStyle
-    
+    let resultItemStyle = appContext.resultItemStyle
     
     const generateResults = (event) => {
         event.preventDefault()
@@ -222,61 +222,67 @@ const BackendQuestionnaire = () => {
                             </div>
                             : <div style={pageBodyStyle}>
                                 <ResultCard>
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        Framework
-                                    </Typography>
-                                    {backendState.resultStatus.frameworkIcon}
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        {backendState.resultStatus.frameworkDescription}
-                                    </Typography>
+                                    <div style={resultItemStyle}>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            Framework
+                                        </Typography>
+                                        {backendState.resultStatus.frameworkIcon}
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            {backendState.resultStatus.frameworkDescription}
+                                        </Typography>
+                                    </div>
                                 </ResultCard>
                                 <ResultCard>
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        Language
-                                    </Typography>
-                                    {backendState.resultStatus.languageIcon}
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        {backendState.resultStatus.languageDescription}
-                                    </Typography>
+                                    <div style={resultItemStyle}>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            Language
+                                        </Typography>
+                                        {backendState.resultStatus.languageIcon}
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            {backendState.resultStatus.languageDescription}
+                                        </Typography>
+                                    </div>
                                 </ResultCard>
                                 <ResultCard>
-                                    <Typography
-                                      color={appTheme.secondary}
-                                      fontFamily='-apple-system'
-                                      fontSize='2vh'
-                                      fontWeight='bold'
-                                    >
-                                        Testing
-                                    </Typography>
-                                    {backendState.resultStatus.testingIcon}
-                                    <Typography
-                                        color={appTheme.secondary}
-                                        fontFamily='-apple-system'
-                                        fontSize='2vh'
-                                        fontWeight='bold'
-                                    >
-                                        {backendState.resultStatus.testingDescription}
-                                    </Typography>
+                                    <div style={resultItemStyle}>
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            Testing
+                                        </Typography>
+                                        {backendState.resultStatus.testingIcon}
+                                        <Typography
+                                            color={appTheme.secondary}
+                                            fontFamily='-apple-system'
+                                            fontSize='2vh'
+                                            fontWeight='bold'
+                                        >
+                                            {backendState.resultStatus.testingDescription}
+                                        </Typography>
+                                    </div>
                                 </ResultCard>
                             </div>
                         }
