@@ -80,6 +80,12 @@ const calculateResultStatus = (state) => {
 
 const frontendStateReducer = (state, action) => {
     switch (action.type) {
+        case FRONTEND_ACTIONS.GENERATE_RESULTS:
+            return {
+                ...state,
+                pageContent: 'results',
+                resultStatus: calculateResultStatus(state)
+            }
         case FRONTEND_ACTIONS.RESET_PAGE:
             return {
                 ...state,
@@ -92,12 +98,6 @@ const frontendStateReducer = (state, action) => {
                     testingDescription: '',
                     testingIcon: <></>,
                 }
-            }
-        case FRONTEND_ACTIONS.GENERATE_RESULTS:
-            return {
-                ...state,
-                pageContent: 'results',
-                resultStatus: calculateResultStatus(state)
             }
         case FRONTEND_ACTIONS.SET_EXPERIENCE:
             return {

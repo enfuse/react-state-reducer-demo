@@ -7,15 +7,20 @@ import {Typography} from "@mui/material";
 import IconFrame from "../components/IconFrame";
 import SubmitButton from "../components/SubmitButton";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
+import {useNavigate} from "react-router-dom";
 
 const SummaryPage = () => {
+		let navigate = useNavigate()
 		let appContext = useContext(AppContext)
 		let appTheme = appContext.isDarkThemeActive ? appContext.darkTheme : appContext.lightTheme
 		let frontendResults = appContext.frontendState.resultStatus
 		let mobileResults = appContext.mobileState.resultStatus
 		let pageStyle = appContext.pageStyle
 	
-		const resetPage = () => {}
+		const resetPage = () => {
+				appContext.initializeResults()
+				navigate('/')
+		}
 	
 		return (
 				<>

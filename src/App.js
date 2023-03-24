@@ -1,12 +1,16 @@
-import {createContext, useReducer, useState} from "react";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {createContext, useEffect, useReducer, useState} from "react";
+import {BrowserRouter, Navigate, Route, Routes, useNavigate} from "react-router-dom";
 
 import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
 import FrontendQuestionnaire from "./pages/frontend/FrontendQuestionnaire";
-import {defaultFrontendState, frontendStateReducer} from "./pages/frontend/FrontendQuestionnaireState";
+import {
+  defaultFrontendState,
+  FRONTEND_ACTIONS,
+  frontendStateReducer
+} from "./pages/frontend/FrontendQuestionnaireState";
 import HomePage from "./pages/HomePage";
 import MobileQuestionnaire from "./pages/mobile/MobileQuestionnaire";
-import {defaultMobileState, mobileStateReducer} from "./pages/mobile/MobileQuestionnaireState";
+import {defaultMobileState, MOBILE_ACTIONS, mobileStateReducer} from "./pages/mobile/MobileQuestionnaireState";
 import SummaryPage from "./pages/SummaryPage";
 
 export const SELECTIONS = Object.freeze({
@@ -16,6 +20,7 @@ export const SELECTIONS = Object.freeze({
 })
 
 export const AppContext = createContext({
+    initializeResults: () => {},
     isDarkThemeActive: false,
     setIsDarkThemeActive: (newState) => {},
     darkTheme: {},
@@ -32,8 +37,24 @@ const App = () => {
     const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState, undefined)
     const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState, undefined)
   
+    const initializeResults = () => {
+        frontendDispatch({
+            type: FRONTEND_ACTIONS.RESET_PAGE,
+            value: 'Initialize Results'
+        })
+        mobileDispatch({
+            type: MOBILE_ACTIONS.RESET_PAGE,
+            value: 'Initialize Results'
+        })
+    }
+  
+    useEffect(() => {
+        initializeResults()
+    }, [])
+  
     return (
         <AppContext.Provider value={{
+            initializeResults: initializeResults,
             isDarkThemeActive: isDarkThemeActive,
             setIsDarkThemeActive: setIsDarkThemeActive,
             darkTheme: {
@@ -69,7 +90,10 @@ const App = () => {
                     <Route path='/frontend' element={<FrontendQuestionnaire/>}/>
                     <Route path='/home' element={<HomePage/>}/>
                     <Route path='/mobile' element={<MobileQuestionnaire/>}/>
-                    <Route path='/summary' element={<SummaryPage/>}/>
+                    {(frontendState.pageContent === 'results' && mobileState.pageContent === 'results')
+                        ? <Route path='/summary' element={<SummaryPage/>}/>
+                        : <Route path='/summary' element={<Navigate to='/home'/>}/>
+                    }
                 </Routes>
             </BrowserRouter>
         </AppContext.Provider>
