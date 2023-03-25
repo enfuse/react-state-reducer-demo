@@ -27,6 +27,7 @@ const pageBodyStyle = {
 	display: 'flex',
 	flexDirection: 'column',
 	height: '80%',
+	gap: '2.5%',
 	justifyContent: 'center',
 	width: '100%'
 }
