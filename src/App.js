@@ -60,25 +60,7 @@ const App = () => {
     const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState)
   
     const initializeResults = () => {
-        setBackendState({
-            pageContent: 'quiz',
-            resultStatus: {
-                frameworkDescription: '',
-                frameworkIcon: <></>,
-                frameworkTitle: '',
-                languageDescription: '',
-                languageIcon: <></>,
-                languageTitle: '',
-                testingDescription: '',
-                testingIcon: <></>,
-                testingTitle: ''
-            },
-            userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
-            userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
-            userInterestInMicrosoft: SELECTIONS.NOT_INTERESTED,
-            userInterestInModernity: SELECTIONS.NOT_INTERESTED,
-            userInterestInWebApps: SELECTIONS.NOT_INTERESTED
-        })
+        setBackendState(defaultBackendState)
         frontendDispatch({
             type: FRONTEND_ACTIONS.RESET_PAGE,
             value: 'Initialize Results'
