@@ -6,6 +6,8 @@ import {Typography} from "@mui/material";
 import {AppContext} from "../../App";
 import AppPage from "../../components/AppPage";
 import AppLayout from "../../components/AppLayout";
+import {DjangoIcon, DotNetIcon, KtorIcon, SpringIcon} from "../../components/FrameworkIcons";
+import {CSharpIcon, FSharpIcon, JavaIcon, KotlinIcon, PythonIcon} from "../../components/LanguageIcons";
 import {
 	SelectUserInterestInEmbedded,
 	SelectUserInterestInFunctional,
@@ -13,10 +15,8 @@ import {
 	SelectUserInterestInModernity,
 	SelectUserInterestInWebApps
 } from "./BackendRadioGroups";
-import SubmitButton from "../../components/SubmitButton";
 import ResultCard from "../../components/ResultCard";
-import {DjangoIcon, DotNetIcon, KtorIcon, SpringIcon} from "../../components/FrameworkIcons";
-import {CSharpIcon, FSharpIcon, JavaIcon, KotlinIcon, PythonIcon} from "../../components/LanguageIcons";
+import SubmitButton from "../../components/SubmitButton";
 import {JUnitIcon, NUnitIcon, PyTestIcon} from "../../components/TestingIcons";
 
 const BackendQuestionnaire = () => {
