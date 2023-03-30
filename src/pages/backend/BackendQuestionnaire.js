@@ -3,7 +3,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {Typography} from "@mui/material";
 
-import {AppContext} from "../../App";
+import {AppContext, SELECTIONS} from "../../App";
 import AppPage from "../../components/AppPage";
 import AppLayout from "../../components/AppLayout";
 import {DjangoIcon, DotNetIcon, KtorIcon, SpringIcon} from "../../components/FrameworkIcons";
@@ -18,6 +18,26 @@ import {
 import ResultCard from "../../components/ResultCard";
 import SubmitButton from "../../components/SubmitButton";
 import {JUnitIcon, NUnitIcon, PyTestIcon} from "../../components/TestingIcons";
+
+export const defaultBackendState = {
+	pageContent: 'quiz',
+	resultStatus: {
+		frameworkDescription: '',
+		frameworkIcon: <></>,
+		frameworkTitle: '',
+		languageDescription: '',
+		languageIcon: <></>,
+		languageTitle: '',
+		testingDescription: '',
+		testingIcon: <></>,
+		testingTitle: ''
+	},
+	userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
+	userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
+	userInterestInMicrosoft: SELECTIONS.NOT_INTERESTED,
+	userInterestInModernity: SELECTIONS.NOT_INTERESTED,
+	userInterestInWebApps: SELECTIONS.NOT_INTERESTED
+}
 
 const BackendQuestionnaire = () => {
 	let appContext = useContext(AppContext)

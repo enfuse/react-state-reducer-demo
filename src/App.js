@@ -11,7 +11,7 @@ import {
     resultDescriptionStyle,
     resultItemStyle
 } from "./App.style";
-import BackendQuestionnaire from "./pages/backend/BackendQuestionnaire";
+import BackendQuestionnaire, {defaultBackendState} from "./pages/backend/BackendQuestionnaire";
 import FrontendQuestionnaire from "./pages/frontend/FrontendQuestionnaire";
 import {
     defaultFrontendState,
@@ -55,28 +55,9 @@ export const AppContext = createContext({
 
 const App = () => {
     const [isDarkThemeActive, setIsDarkThemeActive] = useState(false)
-    const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState, undefined)
-    const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState, undefined)
-  
-    const [backendState, setBackendState] = useState({
-        pageContent: 'quiz',
-        resultStatus: {
-            frameworkDescription: '',
-            frameworkIcon: <></>,
-            frameworkTitle: '',
-            languageDescription: '',
-            languageIcon: <></>,
-            languageTitle: '',
-            testingDescription: '',
-            testingIcon: <></>,
-            testingTitle: ''
-        },
-        userInterestInEmbedded: SELECTIONS.NOT_INTERESTED,
-        userInterestInFunctional: SELECTIONS.NOT_INTERESTED,
-        userInterestInMicrosoft: SELECTIONS.NOT_INTERESTED,
-        userInterestInModernity: SELECTIONS.NOT_INTERESTED,
-        userInterestInWebApps: SELECTIONS.NOT_INTERESTED
-    })
+    const [backendState, setBackendState] = useState(defaultBackendState)
+    const [frontendState, frontendDispatch] = useReducer(frontendStateReducer, defaultFrontendState)
+    const [mobileState, mobileDispatch] = useReducer(mobileStateReducer, defaultMobileState)
   
     const initializeResults = () => {
         setBackendState({
