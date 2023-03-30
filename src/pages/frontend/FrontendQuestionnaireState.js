@@ -1,6 +1,18 @@
 import {AngularIcon, ReactIcon} from "../../components/FrameworkIcons";
 import {JavaScriptIcon, NextJsIcon, SvelteJsIcon, TypescriptIcon, VueJsIcon} from "../../components/LanguageIcons";
 import {JasmineIcon, JestIcon, PlaywrightIcon} from "../../components/TestingIcons";
+import {
+    angularJsDescription,
+    jasmineDescription,
+    javascriptDescription,
+    jestDescription,
+    nextJsDescription,
+    playwrightDescription,
+    reactJsDescription,
+    svelteDescription,
+    typescriptDescription,
+    vueJsDescription
+} from "../../components/ToolDescriptions";
 
 export const EXPERIENCE = Object.freeze({
     NOT_EXPERIENCED: '0',
@@ -49,32 +61,14 @@ const calculateResultStatus = (state) => {
         case EXPERIENCE.NOT_EXPERIENCED:
             return {
                 ...state.resultStatus,
-                frameworkDescription: state.userInterestInModernity === '0'
-                    ? 'An open-source JavaScript framework licensed by MIT, ' +
-                    'VueJS is "an approachable, performant and versatile framework for building web user interfaces." ' +
-                    'Read more @ https://vuejs.org/'
-                    : 'An open-source JavaScript framework licensed by MIT, ' +
-                    '"Svelte is a radical new approach to building user interfaces. ' +
-                    'Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, ' +
-                    'Svelte shifts that work into a compile step that happens when you build your app." ' +
-                    'Read more @ https://svelte.dev/',
+                frameworkDescription: state.userInterestInModernity === '0' ? vueJsDescription : svelteDescription,
                 frameworkIcon: state.userInterestInModernity === '0' ? <VueJsIcon/> : <SvelteJsIcon/>,
                 frameworkTitle: state.userInterestInModernity === '0' ? 'VueJS' : 'Svelte',
                 languageDescription: state.userInterestInFunctional === '2'
-                    ? 'One of three core technologies (along with CSS and HTML) supporting the World Wide Web, ' +
-                    '"JavaScript is a multi-paradigm, dynamic language with ' +
-                    'types and operators, standard built-in objects, and methods." ' +
-                    'Read more @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview'
-                    : 'An open-source programming language maintained by Microsoft, ' +
-                    '"TypeScript is a strongly typed programming language that builds on JavaScript, ' +
-                    'giving you better tooling at any scale." ' +
-                    'Read more @ https://www.typescriptlang.org/',
+                    ? javascriptDescription : typescriptDescription,
                 languageIcon: state.userInterestInFunctional === '2' ? <JavaScriptIcon/> : <TypescriptIcon/>,
                 languageTitle: state.userInterestInFunctional === '2' ? 'JavaScript' : 'Typescript',
-                testingDescription:
-                    'Built on top of Jasmine and maintained by Meta, ' +
-                    '"Jest is a delightful JavaScript Testing Framework with a focus on simplicity." ' +
-                    'Read more @ https://jestjs.io/',
+                testingDescription: jestDescription,
                 testingIcon: <JestIcon/>,
                 testingTitle: 'Jest'
             }
@@ -82,72 +76,32 @@ const calculateResultStatus = (state) => {
             return {
                 ...state.resultStatus,
                 frameworkDescription: state.userInterestInModernity === '0'
-                    ? 'An open-source web framework maintained by Google, ' +
-                    '"Angular is an application-design framework and development platform ' +
-                    'for creating efficient and sophisticated single-page apps." ' +
-                    'Read more @ https://angular.io/docs'
-                    : 'An open-source JavaScript library maintained by Meta, ' +
-                    '"React lets you build user interfaces out of individual pieces called components. ' +
-                    'Create your own React components [...], then combine them into entire screens, pages, and apps." ' +
-                    'Read more @ https://react.dev/',
+                    ? angularJsDescription : reactJsDescription,
                 frameworkIcon: state.userInterestInModernity === '0' ? <AngularIcon/> : <ReactIcon/>,
                 frameworkTitle: state.userInterestInModernity === '0' ? 'Angular' : 'React',
                 languageDescription: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2')
-                    ? 'One of three core technologies (along with CSS and HTML) supporting the World Wide Web, ' +
-                    '"JavaScript is a multi-paradigm, dynamic language with ' +
-                    'types and operators, standard built-in objects, and methods." ' +
-                    'Read more @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview'
-                    : 'An open-source programming language developed and maintained by Microsoft, ' +
-                    '"TypeScript is a strongly typed programming language that builds on JavaScript, ' +
-                    'giving you better tooling at any scale." ' +
-                    'Read more @ https://www.typescriptlang.org/',
+                    ? javascriptDescription : typescriptDescription,
                 languageIcon: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2')
                     ? <JavaScriptIcon/> : <TypescriptIcon/>,
                 languageTitle: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2')
                     ? 'JavaScript' : 'Typescript',
-                testingDescription: state.userInterestInModernity === '0'
-                    ? 'An open-source testing framework for JavaScript, ' +
-                    '"Jasmine is a behavior-driven development framework for testing JavaScript code. ' +
-                    'It does not depend on any other JavaScript frameworks, it does not require a DOM, ' +
-                    'and it has a clean, obvious syntax so that you can easily write tests." ' +
-                    'Read more @ https://jasmine.github.io/'
-                    : 'A cross-browser, cross-platform testing framework, ' +
-                    '"Playwright enables reliable end-to-end testing for modern web apps." ' +
-                    'Read more @ https://playwright.dev/',
+                testingDescription: state.userInterestInModernity === '0' ? jasmineDescription : playwrightDescription,
                 testingIcon: state.userInterestInModernity === '0' ? <JasmineIcon/> : <PlaywrightIcon/>,
                 testingTitle: state.userInterestInModernity === '0' ? 'Jasmine' : 'Playwright'
             }
         case EXPERIENCE.VERT_EXPERIENCED:
             return {
                 ...state.resultStatus,
-                frameworkDescription: state.userInterestInModernity === '2'
-                    ? '"Used by some of the world\'s largest companies, Next.js enables you to create ' +
-                    'full-stack web applications by extending the latest React features, ' +
-                    'and integrating powerful Rust-based JavaScript tooling for the fastest builds." '
-                    + 'Read more @ https://nextjs.org/'
-                    : 'An open-source JavaScript library maintained by Meta, ' +
-                    '"React lets you build user interfaces out of individual pieces called components. ' +
-                    'Create your own React components [...], then combine them into entire screens, pages, and apps." ' +
-                    'Read more @ https://react.dev/',
+                frameworkDescription: state.userInterestInModernity === '2' ? nextJsDescription : reactJsDescription,
                 frameworkIcon: state.userInterestInModernity === '2' ? <NextJsIcon/> : <ReactIcon/>,
                 frameworkTitle: state.userInterestInModernity === '2' ? 'NextJS' : 'React',
                 languageDescription: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2')
-                    ? 'One of three core technologies (along with CSS and HTML) supporting the World Wide Web, ' +
-                    '"JavaScript is a multi-paradigm, dynamic language with ' +
-                    'types and operators, standard built-in objects, and methods." ' +
-                    'Read more @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview'
-                    : 'An open-source programming language developed and maintained by Microsoft, ' +
-                    '"TypeScript is a strongly typed programming language that builds on JavaScript, ' +
-                    'giving you better tooling at any scale." ' +
-                    'Read more @ https://www.typescriptlang.org/',
+                    ? javascriptDescription : typescriptDescription,
                 languageIcon: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2')
                     ? <JavaScriptIcon/> : <TypescriptIcon/>,
                 languageTitle: (state.userInterestInFunctional === '1' || state.userInterestInFunctional === '2')
                     ? 'JavaScript' : 'Typescript',
-                testingDescription:
-                    'A cross-browser, cross-platform testing framework, ' +
-                    '"Playwright enables reliable end-to-end testing for modern web apps." ' +
-                    'Read more @ https://playwright.dev/',
+                testingDescription: playwrightDescription,
                 testingIcon: <PlaywrightIcon/>,
                 testingTitle: 'Playwright'
             }

@@ -18,6 +18,21 @@ import {
 import ResultCard from "../../components/ResultCard";
 import SubmitButton from "../../components/SubmitButton";
 import {JUnitIcon, NUnitIcon, PyTestIcon} from "../../components/TestingIcons";
+import {
+	cSharpDescription,
+	djangoDescription,
+	dotNetDescription,
+	fSharpDescription,
+	javaDescription,
+	junitDescription,
+	kotlinDescription,
+	kotlinTestDescription,
+	ktorDescription,
+	nUnitDescription,
+	pythonDescription,
+	pythonTestDescription,
+	springDescription
+} from "../../components/ToolDescriptions";
 
 export const defaultBackendState = {
 	pageContent: 'quiz',
@@ -60,23 +75,13 @@ const BackendQuestionnaire = () => {
 				...backendState,
 				pageContent: 'results',
 				resultStatus: {
-					frameworkDescription:
-						'Developed and maintained by Microsoft, ' +
-						'"ASP.NET Core is a cross-platform, high-performance, open-source framework ' +
-						'for building modern, cloud-enabled, Internet-connected apps." ' +
-						'Read more @ https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core',
+					frameworkDescription: dotNetDescription,
 					frameworkIcon: <DotNetIcon/>,
 					frameworkTitle: '.NET',
-					languageDescription:
-						'Developed and maintained by Microsoft and the F# Software Foundation, ' +
-						'"F# is a JavaScript and .NET language for web, cloud, data-science, apps and more." ' +
-						'Read more @ https://fsharp.org/',
+					languageDescription: fSharpDescription,
 					languageIcon: <FSharpIcon/>,
 					languageTitle: 'F#',
-					testingDescription:
-						'Developed by an open-source team and maintained by the .NET Foundation, ' +
-						'"NUnit is a unit-testing framework for all .NET languages." ' +
-						'Read more @ https://nunit.org/',
+					testingDescription: nUnitDescription,
 					testingIcon: <NUnitIcon/>,
 					testingTitle: 'NUnit'
 				}
@@ -88,24 +93,13 @@ const BackendQuestionnaire = () => {
 				...backendState,
 				pageContent: 'results',
 				resultStatus: {
-					frameworkDescription:
-						'Developed and maintained by Microsoft, ' +
-						'"ASP.NET Core is a cross-platform, high-performance, open-source framework ' +
-						'for building modern, cloud-enabled, Internet-connected apps." ' +
-						'Read more @ https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core',
+					frameworkDescription: dotNetDescription,
 					frameworkIcon: <DotNetIcon/>,
 					frameworkTitle: '.NET',
-					languageDescription:
-						'Developed and maintained by Microsoft, ' +
-						'"C# is a modern, object-oriented, and type-safe programming language. ' +
-						'C# enables developers to build many types of secure and robust applications that run in .NET." ' +
-						'Read more @ https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/',
+					languageDescription: cSharpDescription,
 					languageIcon: <CSharpIcon/>,
 					languageTitle: 'C#',
-					testingDescription:
-						'Developed by an open-source team and maintained by the .NET Foundation, ' +
-						'"NUnit is a unit-testing framework for all .NET languages." ' +
-						'Read more @ https://nunit.org/',
+					testingDescription: nUnitDescription,
 					testingIcon: <NUnitIcon/>,
 					testingTitle: 'NUnit'
 				}
@@ -120,24 +114,13 @@ const BackendQuestionnaire = () => {
 				...backendState,
 				pageContent: 'results',
 				resultStatus: {
-					frameworkDescription:
-						'An open source library originally published under an Apache license, ' +
-						'"the Spring Framework is a Java platform that provides comprehensive infrastructure support ' +
-						'for developing Java applications. Spring handles the infrastructure so you can focus on your application." ' +
-						'Read more @ https://docs.spring.io/spring-framework/docs/5.0.0.RC2/spring-framework-reference/overview.html',
+					frameworkDescription: springDescription,
 					frameworkIcon: <SpringIcon/>,
 					frameworkTitle: 'Spring',
-					languageDescription:
-						'Developed and maintained by Oracle (originally Sun Microsystems), ' +
-						'"the Java™ Programming Language is a general-purpose, concurrent, strongly typed, ' +
-						'class-based object-oriented language." ' +
-						'Read more @ https://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html',
+					languageDescription: javaDescription,
 					languageIcon: <JavaIcon/>,
 					languageTitle: 'Java',
-					testingDescription:
-						'An open source testing library maintained by the Java community, ' +
-						'JUnit is a "programmer-friendly testing framework for Java and the JVM." ' +
-						'Read more @ https://github.com/junit-team/junit5/',
+					testingDescription: junitDescription,
 					testingIcon: <JUnitIcon/>,
 					testingTitle: 'JUnit'
 				}
@@ -151,25 +134,13 @@ const BackendQuestionnaire = () => {
 				...backendState,
 				pageContent: 'results',
 				resultStatus: {
-					frameworkDescription:
-						'An open source library originally published under an Apache license, ' +
-						'"the Spring Framework is a Java platform that provides comprehensive infrastructure support ' +
-						'for developing Java applications. Spring handles the infrastructure so you can focus on your application." ' +
-						'Read more @ https://docs.spring.io/spring-framework/docs/5.0.0.RC2/spring-framework-reference/overview.html',
+					frameworkDescription: springDescription,
 					frameworkIcon: <SpringIcon/>,
 					frameworkTitle: 'Spring',
-					languageDescription:
-						'Developed and maintained by JetBrains (IntelliJ, PyCharm), ' +
-						'"Kotlin is a modern but already mature programming language aimed to make developers happier. ' +
-						'It\'s concise, safe, interoperable with Java and other languages, and ' +
-						'provides many ways to reuse code between multiple platforms for productive programming." ' +
-						'Read more @ https://kotlinlang.org/docs/getting-started.html',
+					languageDescription: kotlinDescription,
 					languageIcon: <KotlinIcon/>,
 					languageTitle: 'Kotlin',
-					testingDescription:
-						'An open source testing library maintained by the Java community, ' +
-						'JUnit is a "programmer-friendly testing framework for Java and the JVM." ' +
-						'Read more @ https://github.com/junit-team/junit5/',
+					testingDescription: junitDescription,
 					testingIcon: <JUnitIcon/>,
 					testingTitle: 'JUnit'
 				}
@@ -183,25 +154,13 @@ const BackendQuestionnaire = () => {
 				...backendState,
 				pageContent: 'results',
 				resultStatus: {
-					frameworkDescription:
-						'Developed and maintained by JetBrains (IntelliJ, PyCharm), ' +
-						'"Ktor is a framework to easily build connected applications - ' +
-						'web applications, HTTP services, mobile and browser applications." ' +
-						'Read more @ https://ktor.io/docs/welcome.html',
+					frameworkDescription: ktorDescription,
 					frameworkIcon: <KtorIcon/>,
 					frameworkTitle: 'Ktor',
-					languageDescription:
-						'Developed and maintained by JetBrains (IntelliJ, PyCharm), ' +
-						'"Kotlin is a modern but already mature programming language aimed to make developers happier. ' +
-						'It\'s concise, safe, interoperable with Java and other languages, and ' +
-						'provides many ways to reuse code between multiple platforms for productive programming." ' +
-						'Read more @ https://kotlinlang.org/docs/getting-started.html',
+					languageDescription: kotlinDescription,
 					languageIcon: <KotlinIcon/>,
 					languageTitle: 'Kotlin',
-					testingDescription: 'Developed and maintained by JetBrains (IntelliJ, PyCharm), ' +
-						'"the kotlin.test library provides annotations to mark test functions and ' +
-						'a set of utility functions for performing assertions in tests." ' +
-						'Read more @ https://kotlinlang.org/api/latest/kotlin.test/',
+					testingDescription: kotlinTestDescription,
 					testingIcon: <KotlinIcon/>,
 					testingTitle: 'Kotlin Test'
 				}
@@ -211,25 +170,13 @@ const BackendQuestionnaire = () => {
 				...backendState,
 				pageContent: 'results',
 				resultStatus: {
-					frameworkDescription:
-						'An open-source framework developed and maintained by the Django Software Foundation, ' +
-						'"Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design." ' +
-						'Read more @ https://www.djangoproject.com/',
+					frameworkDescription: djangoDescription,
 					frameworkIcon: <DjangoIcon/>,
 					frameworkTitle: 'Django',
-					languageDescription:
-						'Developed and maintained by the Python Software Foundation, ' +
-						'"Python is an easy to learn, powerful programming language. ' +
-						'It has efficient high-level data structures and ' +
-						'a simple but effective approach to object-oriented programming." ' +
-						'Read more @ https://docs.python.org/3/tutorial/index.html',
+					languageDescription: pythonDescription,
 					languageIcon: <PythonIcon/>,
 					languageTitle: 'Python',
-					testingDescription:
-						'A testing framework developed by the Python community, ' +
-						'"the pytest framework makes it easy to write small, readable tests, ' +
-						'and can scale to support complex functional testing for applications and libraries." ' +
-						'Read more @ https://docs.pytest.org/en/7.2.x/',
+					testingDescription: pythonTestDescription,
 					testingIcon: <PyTestIcon/>,
 					testingTitle: 'pytest'
 				}
@@ -239,21 +186,7 @@ const BackendQuestionnaire = () => {
 	
 	const resetPage = (event) => {
 		event.preventDefault()
-		setBackendState({
-			...backendState,
-			pageContent: 'quiz',
-			resultStatus: {
-				frameworkDescription: '',
-				frameworkIcon: <></>,
-				frameworkTitle: '',
-				languageDescription: '',
-				languageIcon: <></>,
-				languageTitle: '',
-				testingDescription: '',
-				testingIcon: <></>,
-				testingTitle: ''
-			}
-		})
+		setBackendState(defaultBackendState)
 	}
 	
 	return (
