@@ -1,3 +1,8 @@
+const androidDescription =
+	'Developed and maintained by Google, the Android development platform enables developers ' +
+	'to deploy mobile applications to any compatible Android device. Jetpack Compose is the toolkit ' +
+	'recommended by the Android team for modern mobile applications. ' +
+	'Read more @ https://developer.android.com/about'
 const angularJsDescription =
 	'An open-source web framework maintained by Google, ' +
 	'"Angular is an application-design framework and development platform ' +
@@ -8,6 +13,10 @@ const cSharpDescription =
 	'"C# is a modern, object-oriented, and type-safe programming language. ' +
 	'C# enables developers to build many types of secure and robust applications that run in .NET." ' +
 	'Read more @ https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/'
+const dartDescription =
+	'An open-source programming language maintained by Google, "Dart is ' +
+	'a client-optimized language for developing fast apps on any platform." ' +
+	'Read more @ https://dart.dev/overview'
 const djangoDescription =
 	'An open-source framework developed and maintained by the Django Software Foundation, ' +
 	'"Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design." ' +
@@ -17,10 +26,27 @@ const dotNetDescription =
 	'"ASP.NET Core is a cross-platform, high-performance, open-source framework ' +
 	'for building modern, cloud-enabled, Internet-connected apps." ' +
 	'Read more @ https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core'
+const espressoDescription =
+	'Developed and maintained by Google, the Espresso test framework allows you to ' +
+	'"write concise, beautiful, and reliable Android UI tests." ' +
+	'Read more @ https://developer.android.com/training/testing/espresso'
+const flutterDescription =
+	'"Flutter is an open source framework by Google for building beautiful, natively compiled, ' +
+	'multi-platform applications from a single codebase." ' +
+	'Read more @ https://flutter.dev/'
+const flutterTestDescription =
+	'Developed and maintained by the Flutter team, the flutter test library ' +
+	'is the preferred testing method for Flutter apps. ' +
+	'Read more @ https://docs.flutter.dev/testing'
 const fSharpDescription =
 	'Developed and maintained by Microsoft and the F# Software Foundation, ' +
 	'"F# is a JavaScript and .NET language for web, cloud, data-science, apps and more." ' +
 	'Read more @ https://fsharp.org/'
+const iosDescription =
+	'Developed and maintained by Apple, "iOS is the world’s most advanced mobile operating system." ' +
+	'Using the development kits for iOS, iPadOS, macOS, tvOS, and watchOS, mobile applications ' +
+	'can be deployed to any compatible Apple device. ' +
+	'Read more @ https://developer.apple.com/ios/'
 const jasmineDescription =
 	'An open-source testing framework for JavaScript, ' +
 	'"Jasmine is a behavior-driven development framework for testing JavaScript code. ' +
@@ -70,6 +96,11 @@ const nUnitDescription =
 	'Developed by an open-source team and maintained by the .NET Foundation, ' +
 	'"NUnit is a unit-testing framework for all .NET languages." ' +
 	'Read more @ https://nunit.org/'
+const objCDescription =
+	'Objective-C is an object-oriented programming language that was the standard language ' +
+	'used and supported by Apple until the release of Swift in 2014. XCode is the development environment ' +
+	'recommended by Apple for all iOS applications.' +
+	'Read more @ https://developer.apple.com/documentation/objectivec/'
 const playwrightDescription =
 	'A cross-browser, cross-platform testing framework, ' +
 	'"Playwright enables reliable end-to-end testing for modern web apps." ' +
@@ -90,6 +121,10 @@ const reactJsDescription =
 	'"React lets you build user interfaces out of individual pieces called components. ' +
 	'Create your own React components [...], then combine them into entire screens, pages, and apps." ' +
 	'Read more @ https://react.dev/'
+const reactNativeDescription =
+	'Written in JavaScript and rendered with native code, React Native allows you to ' +
+	'"Create native apps for Android, iOS, and more using React." ' +
+	'Read more @ https://reactnative.dev/'
 const springDescription =
 	'An open source library originally published under an Apache license, ' +
 	'"the Spring Framework is a Java platform that provides comprehensive infrastructure support ' +
@@ -101,6 +136,11 @@ const svelteDescription =
 	'Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, ' +
 	'Svelte shifts that work into a compile step that happens when you build your app." ' +
 	'Read more @ https://svelte.dev/'
+const swiftDescription =
+	'"Swift is a powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS. ' +
+	'Swift code is safe by design and produces software that runs lightning-fast." ' +
+	'XCode is the development environment recommended by Apple for all iOS applications. ' +
+	'Read more @ https://developer.apple.com/swift/'
 const typescriptDescription =
 	'An open-source programming language maintained by Microsoft, ' +
 	'"TypeScript is a strongly typed programming language that builds on JavaScript, ' +
@@ -110,13 +150,23 @@ const vueJsDescription =
 	'An open-source JavaScript framework licensed by MIT, ' +
 	'VueJS is "an approachable, performant and versatile framework for building web user interfaces." ' +
 	'Read more @ https://vuejs.org/'
+const xcTestDescription =
+	'Developed and maintained by Apple, the XCTest framework allows you to ' +
+	'"write unit tests for your Xcode projects that integrate seamlessly with Xcode’s testing workflow."' +
+	'Read more @ https://developer.apple.com/documentation/xctest'
 
 export {
+	androidDescription,
 	angularJsDescription,
 	cSharpDescription,
+	dartDescription,
 	djangoDescription,
 	dotNetDescription,
+	espressoDescription,
 	fSharpDescription,
+	flutterDescription,
+	flutterTestDescription,
+	iosDescription,
 	jasmineDescription,
 	javaDescription,
 	javascriptDescription,
@@ -127,12 +177,16 @@ export {
 	ktorDescription,
 	nextJsDescription,
 	nUnitDescription,
+	objCDescription,
 	playwrightDescription,
 	pythonDescription,
 	pythonTestDescription,
 	reactJsDescription,
+	reactNativeDescription,
 	springDescription,
 	svelteDescription,
+	swiftDescription,
 	typescriptDescription,
-	vueJsDescription
+	vueJsDescription,
+	xcTestDescription
 }
