@@ -3,7 +3,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import {Typography} from "@mui/material";
 
-import {AppContext, SELECTIONS} from "../../App";
+import {AppContext} from "../../App";
 import AppPage from "../../components/AppPage";
 import AppLayout from "../../components/AppLayout";
 import {DjangoIcon, DotNetIcon, KtorIcon, SpringIcon} from "../../components/FrameworkIcons";
@@ -33,6 +33,12 @@ import {
 	pythonTestDescription,
 	springDescription
 } from "../../components/ToolDescriptions";
+
+const SELECTIONS = Object.freeze({
+	NOT_INTERESTED: '0',
+	SLIGHTLY_INTERESTED: '1',
+	VERY_INTERESTED: '2'
+})
 
 export const defaultBackendState = {
 	pageContent: 'quiz',

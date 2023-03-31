@@ -36,12 +36,13 @@ const defaultMobileState = {
 
 const MOBILE_ACTIONS = Object.freeze({
 	GENERATE_RESULTS: 0,
-	RESET_PAGE: 1,
-	SET_FUNCTIONAL: 2,
-	SET_MODERNITY: 3,
-	SET_OPEN_SOURCE: 4,
-	SET_SINGLE_LANGUAGE: 5,
-	SET_PLATFORM: 6
+	INITIALIZE: 1,
+	RESET_PAGE: 2,
+	SET_FUNCTIONAL: 3,
+	SET_MODERNITY: 4,
+	SET_OPEN_SOURCE: 5,
+	SET_SINGLE_LANGUAGE: 6,
+	SET_PLATFORM: 7
 })
 
 const calculateResultStatus = (state) => {
@@ -148,6 +149,8 @@ const mobileStateReducer = (state, action) => {
 				pageContent: 'results',
 				resultStatus: calculateResultStatus(state)
 			}
+		case MOBILE_ACTIONS.INITIALIZE:
+			return defaultMobileState
 		case MOBILE_ACTIONS.RESET_PAGE:
 			return {
 				...state,
