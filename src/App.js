@@ -62,11 +62,11 @@ const App = () => {
     const initializeResults = () => {
         setBackendState(defaultBackendState)
         frontendDispatch({
-            type: FRONTEND_ACTIONS.RESET_PAGE,
+            type: FRONTEND_ACTIONS.INITIALIZE,
             value: 'Initialize Results'
         })
         mobileDispatch({
-            type: MOBILE_ACTIONS.RESET_PAGE,
+            type: MOBILE_ACTIONS.INITIALIZE,
             value: 'Initialize Results'
         })
     }

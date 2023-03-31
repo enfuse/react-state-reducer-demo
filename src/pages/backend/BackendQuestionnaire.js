@@ -186,7 +186,21 @@ const BackendQuestionnaire = () => {
 	
 	const resetPage = (event) => {
 		event.preventDefault()
-		setBackendState(defaultBackendState)
+		setBackendState({
+			...backendState,
+			pageContent: 'quiz',
+			resultStatus: {
+				frameworkDescription: '',
+				frameworkIcon: <></>,
+				frameworkTitle: '',
+				languageDescription: '',
+				languageIcon: <></>,
+				languageTitle: '',
+				testingDescription: '',
+				testingIcon: <></>,
+				testingTitle: ''
+			}
+		})
 	}
 	
 	return (

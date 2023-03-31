@@ -48,12 +48,13 @@ const defaultFrontendState = {
 
 const FRONTEND_ACTIONS = Object.freeze({
     GENERATE_RESULTS: 0,
-    RESET_PAGE: 1,
-    SET_EXPERIENCE: 2,
-    SET_FUNCTIONAL: 3,
-    SET_OPEN_SOURCE: 4,
-    SET_MODERNITY: 5,
-    SET_UPDATES: 6
+    INITIALIZE: 1,
+    RESET_PAGE: 2,
+    SET_EXPERIENCE: 3,
+    SET_FUNCTIONAL: 4,
+    SET_OPEN_SOURCE: 5,
+    SET_MODERNITY: 6,
+    SET_UPDATES: 7
 })
 
 const calculateResultStatus = (state) => {
@@ -118,6 +119,8 @@ const frontendStateReducer = (state, action) => {
                 pageContent: 'results',
                 resultStatus: calculateResultStatus(state)
             }
+        case FRONTEND_ACTIONS.INITIALIZE:
+            return defaultFrontendState
         case FRONTEND_ACTIONS.RESET_PAGE:
             return {
                 ...state,
